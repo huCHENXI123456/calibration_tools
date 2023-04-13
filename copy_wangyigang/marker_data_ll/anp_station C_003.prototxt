@@ -1,0 +1,292 @@
+name: "C_003"
+id: 1
+frame_id: "world"
+rear_load: true
+markers { 
+	id: 0
+	name: "front_marker_0"
+	frame_id: "front_marker_0"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 12.725474452128307
+			y: 3.1173601377526676
+			z: 2.139050687979956
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -1.4599092764465156
+			pitch: 1.567614136790118
+			roll: 1.1119321630441787
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 1
+	name: "front_marker_1"
+	frame_id: "front_marker_1"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 13.527293969444765
+			y: 1.5727168966528815
+			z: 2.147147263093759
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -2.088655465077069
+			pitch: 1.5637483384664213
+			roll: 0.6153892830339596
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 2
+	name: "front_marker_2"
+	frame_id: "front_marker_2"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 13.24734193768496
+			y: 0.39081944864068496
+			z: 2.537719016384724
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.27154733714665974
+			pitch: 1.5409811120747405
+			roll: -2.9866009366277546
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 3
+	name: "front_marker_3"
+	frame_id: "front_marker_3"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 13.767038295180502
+			y: -0.7017846450059692
+			z: 2.1503622389142656
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -0.7761335527386254
+			pitch: 1.5022352926545124
+			roll: 2.94810995490311
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 4
+	name: "left_marker_f0"
+	frame_id: "left_marker_f0"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 5.73063860529518
+			y: 3.6455696963526205
+			z: 1.7006373409443525
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 2.2926650262755532
+			pitch: 1.5518354459140933
+			roll: -1.7813897402105832
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 5
+	name: "left_marker_r"
+	frame_id: "left_marker_r"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 3.2184599142443333
+			y: 2.6967404760263807
+			z: 1.6407583246970499
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.6670629765175732
+			pitch: 1.5426632829763613
+			roll: 1.6586241075676222
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 6
+	name: "right_marker_f"
+	frame_id: "right_marker_f"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 6.551925883338757
+			y: -3.013039116143165
+			z: 1.6720455987522087
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -0.5124318573624689
+			pitch: 1.5297214659815102
+			roll: -2.8049718030391424
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 
+markers { 
+	id: 7
+	name: "right_marker_r"
+	frame_id: "right_marker_r"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 2.7622850725386234
+			y: -3.1183781441846334
+			z: 1.9342436713238569
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.6138032080779355
+			pitch: 1.5396179481013017
+			roll: -0.32574492494128265
+		} 
+	} 
+	# observers: FRONT_WIDE_CAMERA 
+	# observers: FRONT_MIDDLE_CAMERA 
+	# observers: FRONT_LONG_CAMERA 
+	# observers: RIGHT_FRONT_CAMERA 
+	# observers: RIGHT_REAR_CAMERA 
+	# observers: LEFT_FRONT_CAMERA 
+	# observers: LEFT_REAR_CAMERA 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.5
+	} 
+	solve_pose: true
+	scale: 2.5
+	use_opencv: true
+} 

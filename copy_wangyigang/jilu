@@ -1,0 +1,22 @@
+# use
+## input data
+### marker_data.py
+class  
+init_position
+position
+
+## start
+bash start.sh
+
+## tar
+
+image
+station
+param
+
+## verify
+>>> log
+bash test.py
+
+
+

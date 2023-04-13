@@ -4,7 +4,7 @@ sys.path.append('tools')
 import math
 import yaml
 import csv
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 # from mpl_toolkits.mplot3d import axes3d
 # import tools.marker_data.Marker_0 as m
@@ -12,20 +12,20 @@ import numpy as np
 import marker_data as m_c
 import marker_process as m_p
 
-# # 绘制四个角点
-# def plota(p):
-#     #3D Plotting
-#     fig = plt.figure()
-#     ax = plt.axes(projection="3d")
-#     ax.scatter(p[0][0],p[0][1],p[0][2],color='b')
-#     ax.scatter(p[1][0],p[1][1],p[1][2],color='g')
-#     ax.scatter(p[2][0],p[2][1],p[2][2],color='r')
-#     ax.scatter(p[3][0],p[3][1],p[3][2],color='y')
-#     #Labeling
-#     ax.set_xlabel('X Axes')
-#     ax.set_ylabel('Y Axes')
-#     ax.set_zlabel('Z Axes')
-#     plt.show()
+# 绘制四个角点
+def plota(p):
+    #3D Plotting
+    fig = plt.figure()
+    ax = plt.axes(projection="3d")
+    ax.scatter(p[0][0],p[0][1],p[0][2],color='b')
+    ax.scatter(p[1][0],p[1][1],p[1][2],color='g')
+    ax.scatter(p[2][0],p[2][1],p[2][2],color='r')
+    ax.scatter(p[3][0],p[3][1],p[3][2],color='y')
+    #Labeling
+    ax.set_xlabel('X Axes')
+    ax.set_ylabel('Y Axes')
+    ax.set_zlabel('Z Axes')
+    plt.show()
 
 # # 绘制四个角点
 # def plotf(p1,p2,p3,p4):
@@ -152,15 +152,15 @@ if __name__ == '__main__':
         ret.append(markerpostion(m5))
         ret.append(markerpostion(m6))
         ret.append(markerpostion(m7))        
-        # if True:
-        #     plota(ret[0])
-        #     plota(ret[1])
-        #     plota(ret[2])
-        #     plota(ret[3])
-        #     plota(ret[4])
-        #     plota(ret[5])
-        #     plota(ret[6])
-        #     plota(ret[7])          
+        if True:
+            plota(ret[0])
+            plota(ret[1])
+            plota(ret[2])
+            plota(ret[3])
+            plota(ret[4])
+            plota(ret[5])
+            plota(ret[6])
+            plota(ret[7])          
     else:
         print("noting to do!")
     print("#"*60)

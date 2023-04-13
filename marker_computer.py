@@ -4,43 +4,43 @@ sys.path.append('tools')
 import math
 import yaml
 import csv
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
-# from mpl_toolkits.mplot3d import axes3d
+from mpl_toolkits.mplot3d import axes3d
 # import tools.marker_data.Marker_0 as m
 # from tools.marker_data import Marker_0
 import marker_data as m_c
 import marker_process as m_p
 
-# # 绘制四个角点
-# def plota(p):
-#     #3D Plotting
-#     fig = plt.figure()
-#     ax = plt.axes(projection="3d")
-#     ax.scatter(p[0][0],p[0][1],p[0][2],color='b')
-#     ax.scatter(p[1][0],p[1][1],p[1][2],color='g')
-#     ax.scatter(p[2][0],p[2][1],p[2][2],color='r')
-#     ax.scatter(p[3][0],p[3][1],p[3][2],color='y')
-#     #Labeling
-#     ax.set_xlabel('X Axes')
-#     ax.set_ylabel('Y Axes')
-#     ax.set_zlabel('Z Axes')
-#     plt.show()
+# 绘制四个角点
+def plota(p):
+    #3D Plotting
+    fig = plt.figure()
+    ax = plt.axes(projection="3d")
+    ax.scatter(p[0][0],p[0][1],p[0][2],color='b')
+    ax.scatter(p[1][0],p[1][1],p[1][2],color='g')
+    ax.scatter(p[2][0],p[2][1],p[2][2],color='r')
+    ax.scatter(p[3][0],p[3][1],p[3][2],color='y')
+    #Labeling
+    ax.set_xlabel('X Axes')
+    ax.set_ylabel('Y Axes')
+    ax.set_zlabel('Z Axes')
+    plt.show()
 
-# # 绘制四个角点
-# def plotf(p1,p2,p3,p4):
-#     #3D Plotting
-#     fig = plt.figure()
-#     ax = plt.axes(projection="3d")
-#     ax.scatter(p1[0],p1[1],p1[2],color='b')
-#     ax.scatter(p2[0],p2[1],p2[2],color='g')
-#     ax.scatter(p3[0],p3[1],p3[2],color='r')
-#     ax.scatter(p4[0],p4[1],p4[2],color='y')
-#     #Labeling
-#     ax.set_xlabel('X Axes')
-#     ax.set_ylabel('Y Axes')
-#     ax.set_zlabel('Z Axes')
-#     plt.show()
+# 绘制四个角点
+def plotf(p1,p2,p3,p4):
+    #3D Plotting
+    fig = plt.figure()
+    ax = plt.axes(projection="3d")
+    ax.scatter(p1[0],p1[1],p1[2],color='b')
+    ax.scatter(p2[0],p2[1],p2[2],color='g')
+    ax.scatter(p3[0],p3[1],p3[2],color='r')
+    ax.scatter(p4[0],p4[1],p4[2],color='y')
+    #Labeling
+    ax.set_xlabel('X Axes')
+    ax.set_ylabel('Y Axes')
+    ax.set_zlabel('Z Axes')
+    plt.show()
 
 def deg2rad(d):
     deg = d[0] + d[1]/60.0 + d[2]/3600.0
@@ -97,6 +97,7 @@ def markerdata(m0):
 
 def markerpostion(m0):
     print("------------------- ", m0.name, " -----------------")
+    # 测量位置为前轴中心点，标定使用后轴中心点
     ret1 = [m0.position[0][0]+m0.init_position[0], m0.position[0][1], m0.position[0][2]]
     ret2 = [m0.position[1][0]+m0.init_position[0], m0.position[1][1], m0.position[1][2]]
     ret3 = [m0.position[2][0]+m0.init_position[0], m0.position[2][1], m0.position[2][2]]
@@ -109,9 +110,121 @@ def markerpostion(m0):
     print(ret4)
     return pointSet
 
+def markerComponent(m0, yaw, offset):
+    print("test")    
+
+def save_station(ret, file_name, station_id, rot_angle, trans_position):
+    with open(file_name, 'w+') as f:
+        f.write("name: " + "\"Deepway\"" + "\n")
+        f.write("id: " + str(station_id) + "\n")
+        f.write("frame_id: " + "\"world\"" + "\n")
+        f.write("rear_load: true" + "\n")
+
+        for i in range(len(ret)):
+            print("="*25, "ret[", i, "]", "="*25)
+            B_s = np.array(ret[i])
+            T, R, t = m_p.computer_translate(m_c.M_I, B_s)
+            # Raw Pose
+            y1, p1, r1 = m_p.convert_eular(R)
+            euler_out = m_p.rot_to_eular(R)
+            # component angle and translation
+            R_z_set = m_p.convert_rotation(rot_angle, 0, 0)
+            R_c = np.dot(R_z_set, R)
+            t_c = np.dot(R_z_set, t) + np.array(trans_position)
+            y1_c, p1_c, r1_c = m_p.convert_eular(R_c)
+
+            # eular
+            if False:
+                print("-"*60)
+                print("raw yaw: ", math.degrees(y1), "pitch: ", math.degrees(p1), "roll: ", math.degrees(r1))
+                print("raw euler(p[0]->p[1]->z): ", euler_out)
+                print("raw t: ", t)
+                print("-"*60)
+                print("new degrees yaw:", math.degrees(y1_c), ",pitch:", math.degrees(p1_c), ",roll:", math.degrees(r1_c))
+                print("new t1: ", t_c)
+            # verify
+            if False:
+                R1 = m_p.convert_rotation(y1, p1, r1)
+                print("[main] verify R convert: ", R1)
+
+            f.write("markers { \n")
+            f.write("\tid: " + str(i+1) + "\n")
+            if i == 0:
+                f.write("\tname: " + "\"" + "P1" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P1" + "\"" + "\n")
+            if i == 1:
+                f.write("\tname: " + "\"" + "P2" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P2" + "\"" + "\n")
+            if i == 2:
+                f.write("\tname: " + "\"" + "P3" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P3" + "\"" + "\n")
+            if i == 3:
+                f.write("\tname: " + "\"" + "P4" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P4" + "\"" + "\n")
+            if i == 4:
+                f.write("\tname: " + "\"" + "P5" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P5" + "\"" + "\n")
+            if i == 5:
+                f.write("\tname: " + "\"" + "P6" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P6" + "\"" + "\n")
+            if i == 6:
+                f.write("\tname: " + "\"" + "P7" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P7" + "\"" + "\n")
+            if i == 7:
+                f.write("\tname: " + "\"" + "P8" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P8" + "\"" + "\n")
+
+            f.writelines("\ttype: CHESS_BOARD" + "\n")
+            f.writelines("\tpose {" + "\n")
+            f.writelines("\t\tframe_id: "+"\"world\"" + "\n")
+            f.writelines("\t\tposition {" + "\n")
+            f.write("\t\t\tx: " + str(t_c[0]) + "\n")
+            f.write("\t\t\ty: " + str(t_c[1]) + "\n")
+            f.write("\t\t\tz: " + str(t_c[2]) + "\n")
+            f.writelines("\t\t} \n")
+            f.writelines("\t\teuler_angles { \n\t\t\teuler_order: XYZ" + "\n")
+            f.write("\t\t\tyaw: " + str(y1_c) + "\n")
+            f.write("\t\t\tpitch: " + str(p1_c) + "\n")
+            f.write("\t\t\troll: " + str(r1_c) + "\n")
+            f.writelines("\t\t} \n")
+            f.writelines("\t} \n")
+            
+            if i == 0:    # The Front marker
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+            if i == 1 or i == 2:    # The Front marker
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_LONG_CAMERA " + "\n")
+            if i == 3:    # The Front marker
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
+            if i == 4:
+                f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
+            if i == 5:
+                f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
+            if i == 6:
+                f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
+            if i == 7:
+                f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
+
+            f.writelines("\tused: true"+"\n")
+            f.writelines(
+                "\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")
+            f.writelines(
+                "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.5" + "\n")
+            f.writelines("\t} \n")
+            f.writelines("\tsolve_pose: true" + "\n")
+            f.writelines("\tscale: 2.0" + "\n")
+            f.writelines("\tuse_opencv: true" + "\n")
+            f.writelines("} \n")
+    f.close()
+
+
 if __name__ == '__main__':
     print(">>>>>>>>>>>>> CAR ID: ", m_c.CAR_ID)
     ret = []
+    ###########################################
+    file_name = m_c.CAR_ID + "_" + str(m_c.station_id) + '.prototxt'
     # Marker of station, adjust the number of marker class
     # step 1: define class
     m0 = m_c.FrontMarker_0()
@@ -133,15 +246,15 @@ if __name__ == '__main__':
         ret.append(markerdata(m5))
         ret.append(markerdata(m6))
         ret.append(markerdata(m7))    
-        # if True:
-            # plota(ret[0])
-            # plota(ret[1])
-            # plota(ret[2])
-            # plota(ret[3])
-            # plota(ret[4])
-            # plota(ret[5])
-            # plota(ret[6])
-            # plota(ret[7])
+        if True:
+            plota(ret[0])
+            plota(ret[1])
+            plota(ret[2])
+            plota(ret[3])
+            plota(ret[4])
+            plota(ret[5])
+            plota(ret[6])
+            plota(ret[7])
 
     elif m_c.MARKER_TYPE == 1:  # laika station
         ret.append(markerpostion(m0))    
@@ -152,15 +265,15 @@ if __name__ == '__main__':
         ret.append(markerpostion(m5))
         ret.append(markerpostion(m6))
         ret.append(markerpostion(m7))        
-        # if True:
-        #     plota(ret[0])
-        #     plota(ret[1])
-        #     plota(ret[2])
-        #     plota(ret[3])
-        #     plota(ret[4])
-        #     plota(ret[5])
-        #     plota(ret[6])
-        #     plota(ret[7])          
+        if True:
+            plota(ret[0])
+            plota(ret[1])
+            plota(ret[2])
+            plota(ret[3])
+            plota(ret[4])
+            plota(ret[5])
+            plota(ret[6])
+            plota(ret[7])          
     else:
         print("noting to do!")
     print("#"*60)
@@ -173,86 +286,5 @@ if __name__ == '__main__':
             print("the leftDown of 3: ", ret[i][2])
             print("the rightDown of 4: ", ret[i][3])
 
-    with open('anp_station.prototxt','w+') as f:
-        f.write("name: " +"\"Deepway\"" + "\n")
-        f.write("id: 1"+ "\n")
-        f.write("frame_id: " + "\"world\"" + "\n")
-        f.write("rear_load: true"+ "\n")
-        
-        for i in range(len(ret)) :
-            print("="*30, "ret[", i, "]", "="*30)
-            B_s = np.array(ret[i])
-            T,R,t = m_p.computer_translate(m_c.M_I, B_s)
-            y1, p1, r1 = m_p.convert_eular(R)
-            euler_out = m_p.rot_to_eular(R)
-            
-            # eular
-            if False: 
-                print("yaw: ", y1, "pitch: ", p1, "roll: ", r1)
-                print("euler(x->y->z): ", euler_out)
-                print("x: ", t[0], "y: ", t[1], "z: ", t[2])
-            
-            # verify
-            if False:
-                R1 = m_p.convert_rotation(y1, p1, r1)
-                print("[main] verify R convert: ", R1)
-
-            f.write("markers { \n")
-            f.write("\tid: " + str(i) + "\n")
-            if i == 0:
-                f.write("\tname: " + "\"" + str(m0.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m0.name) + "\"" + "\n")
-            if i == 1:
-                f.write("\tname: " + "\"" + str(m1.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m1.name) + "\"" + "\n")
-            if i == 2:
-                f.write("\tname: " + "\"" +  str(m2.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m2.name) + "\"" + "\n")
-            if i == 3:
-                f.write("\tname: " + "\"" + str(m3.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m3.name) + "\"" + "\n")
-            if i == 4:
-                f.write("\tname: " + "\"" + str(m4.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m4.name) + "\"" + "\n")
-            if i == 5:
-                f.write("\tname: " + "\"" + str(m5.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m5.name) + "\"" + "\n")
-            if i == 6:
-                f.write("\tname: " + "\"" + str(m6.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m6.name) + "\"" + "\n")
-            if i == 7:
-                f.write("\tname: " + "\"" + str(m7.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m7.name) + "\"" + "\n")  
-
-            f.writelines("\ttype: CHESS_BOARD" + "\n")
-            f.writelines("\tpose {" + "\n")
-            f.writelines("\t\tframe_id: "+"\"world\""+ "\n")
-            f.writelines("\t\tposition {" + "\n")
-            f.write("\t\t\tx: " + str(t[0]) + "\n")
-            f.write("\t\t\ty: " + str(t[1]) + "\n")
-            f.write("\t\t\tz: " + str(t[2]) + "\n")
-            f.writelines("\t\t} \n")
-            f.writelines("\t\teuler_angles { \n\t\t\teuler_order: XYZ" + "\n")
-            f.write("\t\t\tyaw: "+ str(y1) + "\n")
-            f.write("\t\t\tpitch: " + str(p1) + "\n")
-            f.write("\t\t\troll: " + str(r1) + "\n")
-            f.writelines("\t\t} \n")
-            f.writelines("\t} \n")
-            f.writelines("\t# observers: FRONT_WIDE_CAMERA " + "\n")
-            f.writelines("\t# observers: FRONT_MIDDLE_CAMERA " + "\n")
-            f.writelines("\t# observers: FRONT_LONG_CAMERA " + "\n")
-            f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
-            f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
-            f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
-            f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
-            f.writelines("\tused: true"+"\n")
-            f.writelines("\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" +"\n")
-            f.writelines("\troi { \n\t\tauto_roi: true \n\t\tscale: 2.5" + "\n")
-            f.writelines("\t} \n")
-            f.writelines("\tsolve_pose: true" + "\n")
-            f.writelines("\tscale: 2.5" + "\n")
-            f.writelines("\tuse_opencv: true" + "\n")
-            f.writelines("} \n")
-    f.close()
-
-    print("generator done!!!!!!!!!")
+    save_station(ret, file_name, m_c.station_id, m_c.init_yaw, m_c.init_p)
+    print("--- generator ", file_name, " done!!!!!!!!! ---")

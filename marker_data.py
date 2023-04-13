@@ -1,11 +1,17 @@
+# -*- coding: UTF-8 -*-
+
 import numpy as np
+
 ######################################
 ########## Marker coordinate #########
 ######################################
+# 左上->右上->左下->右下
+# x水平, y向下
 M = np.array([[0, 0, 0.0],    
             [0.7, 0.0, 0.0],
             [0.0, 0.3, 0.0],
             [0.7, 0.3, 0.0]])
+# x朝下(used),标定算法使用，y朝右
 M_I = np.array([[0, 0, 0.0],
             [0.0, 0.7, 0.0],
             [0.3, 0.0, 0.0],
@@ -14,16 +20,23 @@ M_I = np.array([[0, 0, 0.0],
 POINT_N = 4
 
 ######################################
+# 不同全站仪配置输出参数不同
+# 徕卡坐标系和车体坐标系不一致，需要手动更改
 ######################################
-CAR_ID = "B_002"
-MARKER_TYPE = 1   # init_position 和 position
-
+CAR_ID = "B_004"
+MARKER_TYPE = 1   # 徕卡: init_position 和 position
+wheelbase = 5.175
+# user setting
+init_yaw = 0.02147641109486698   # math.radians(0)   # degrees, left is negative, -0.1,-0.3,-0.5,-0.8
+init_p = [-0.02336154, 0.0702154, 0.0] # position[x,y,z]
+station_id = 1  # default: 0
+###########################################
 class FrontMarker_0:
       def __init__(self):
             self.name = "front_marker_0"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # rear center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 车体坐标系 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [6.9593,7.0483,6.9539,7.0430]
             self.HAR = [[21,37,10],
                         [15,56,17],
@@ -35,10 +48,10 @@ class FrontMarker_0:
                         [275,7,49],
                         [272,44,20],
                         [272,42,22]]
-            self.position = [[6.4697,2.5641,2.1326],
-                             [6.7774,1.9355,2.1328],
-                             [6.4649,2.5617,1.8327],
-                             [6.7725,1.9330,1.8329]]   #  x y z
+            self.position = [[5.1160,3.0640,2.7780],
+                             [5.4009,2.4246,2.7853],
+                             [5.1192,3.0623,2.4782],
+                             [5.4042,2.4227,2.4854]]   #  x>0 y>0 z>0
 
 
 class FrontMarker_1:
@@ -46,7 +59,7 @@ class FrontMarker_1:
             self.name = "front_marker_1"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # rear wheel center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [8.1857,8.2019,8.1885,8.2050]
             self.HAR = [[9,41,39],
                         [4,48,3],
@@ -58,10 +71,10 @@ class FrontMarker_1:
                         [276,37,10],
                         [274,26,37],
                         [274,32,37]]
-            self.position = [[8.0688,1.3784,2.4361],
-                             [8.1731,0.6864,2.4519],
-                             [8.0727,1.3723,2.1364],
-                             [8.1768,0.6800,2.1521]]   #  x y z
+            self.position = [[6.7100,0.9895,3.0258],
+                             [6.9948,0.3501,2.9974],
+                             [6.7000,0.9978,2.7265],
+                             [6.9845,0.3588,2.6980]]   #  x>0 y>0 z>0
              
 
 class FrontMarker_2:
@@ -69,7 +82,7 @@ class FrontMarker_2:
             self.name = "front_marker_2"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.6611,3.6039,3.6610,3.6034]
             self.HAR = [[73,21,23],
                         [62,20,5],
@@ -81,10 +94,10 @@ class FrontMarker_2:
                         [273,6,14],
                         [268,28,48],
                         [268,20,11]]
-            self.position = [[1.0486,3.5077,1.7029],
-                             [1.6733,3.1919,1.6954],
-                             [1.0454,3.5086,1.4029],
-                             [1.6703,3.1929,1.3954]]   #  x y z
+            self.position = [[7.3294,-0.5309,2.7740],
+                             [7.0958,-1.1907,2.7710],
+                             [7.3285,-0.5290,2.4741],
+                             [7.0940,-1.1883,2.4708]]   #  x>0 y>0 z>0
 
 
 class FrontMarker_3:
@@ -92,7 +105,7 @@ class FrontMarker_3:
             self.name = "front_marker_3"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [4.0064,3.8720,4.0116,3.8761]
             self.HAR = [[300,1,40],
                         [290,1,23],
@@ -104,17 +117,17 @@ class FrontMarker_3:
                         [272,37,55],
                         [268,18,5],
                         [268,11,48]]
-            self.position = [[2.0049,-3.4687,1.6810],
-                             [1.3258,-3.6380,1.6780],
-                             [2.0076,-3.4731,1.3811],
-                             [1.3281,-3.6414,1.3780]]   #  x y z
+            self.position = [[6.9362,-2.1690,2.7051],
+                             [6.5654,-2.7626,2.6967],
+                             [6.9409,-2.1676,2.4050],
+                             [6.5692,-2.7610,2.3965]]   #  x>0 y>0 z>0
 
 class LeftMarker_F0:
       def __init__(self):
             self.name = "left_marker_f0"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.6567,3.8376,3.6596,3.8428]
             self.HAR = [[127,55,8],
                         [117,34,8],
@@ -126,17 +139,17 @@ class LeftMarker_F0:
                         [272,34,42],
                         [267,38,26],
                         [268,6,24]]
-            self.position = [[-2.2472,2.8847,1.6491],
-                             [-1.7761,3.4019,1.6728],
-                             [-2.2415,2.8928,1.3492],
-                             [-1.7706,3.4106,1.3730]]   #  x y z
+            self.position = [[0.0690,3.6169,2.0620],
+                             [0.7133,3.3425,2.0542],
+                             [0.0684,3.6243,1.7619],
+                             [0.7130,3.3495,1.7542]]   #  x>0 y>0 z>0
 
 class LeftMarker_R0:
       def __init__(self):
             self.name = "left_marker_r"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.7132,3.6356,3.7048,3.6258]
             self.HAR = [[239,46,45],
                         [228,54,51],
@@ -148,10 +161,10 @@ class LeftMarker_R0:
                         [272,32,4],
                         [267,54,45],
                         [267,48,21]]
-            self.position = [[-1.8690,-3.2086,1.6648],
-                             [-2.3893,-2.7403,1.6610],
-                             [-1.8616,-3.2032,1.3650],
-                             [-2.3814,-2.7342,1.3611]]   #  x y z
+            self.position = [[-3.2680,2.8674,2.0307],
+                             [-2.7919,3.3805,2.0449],
+                             [-3.2606,2.8687,1.7309],
+                             [-2.7849,3.3825,1.7448]]   #  x>0 y>0 z>0
 
 
 class RightMarker_F0:
@@ -159,7 +172,7 @@ class RightMarker_F0:
             self.name = "right_marker_f"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.6567,3.8376,3.6596,3.8428]
             self.HAR = [[127,55,8],
                         [117,34,8],
@@ -171,17 +184,17 @@ class RightMarker_F0:
                         [272,34,42],
                         [267,38,26],
                         [268,6,24]]
-            self.position = [[-2.2472,2.8847,1.6491],
-                             [-1.7761,3.4019,1.6728],
-                             [-2.2415,2.8928,1.3492],
-                             [-1.7706,3.4106,1.3730]]   #  x y z
+            self.position = [[0.7347,-3.2633,2.0315],
+                             [0.1342,-3.6235,2.0304],
+                             [0.7371,-3.2669,1.7315],
+                             [0.1366,-3.6262,1.7304]]   #  x>0 y>0 z>0
 
 class RightMarker_R0:
       def __init__(self):
             self.name = "right_marker_r"
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
-            self.init_position = [3.979,0,1.530]     # center: x,y,z
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.7132,3.6356,3.7048,3.6258]
             self.HAR = [[239,46,45],
                         [228,54,51],
@@ -193,7 +206,7 @@ class RightMarker_R0:
                         [272,32,4],
                         [267,54,45],
                         [267,48,21]]
-            self.position = [[-1.8690,-3.2086,1.6648],
-                             [-2.3893,-2.7403,1.6610],
-                             [-1.8616,-3.2032,1.3650],
-                             [-2.3814,-2.7342,1.3611]]   #  x y z
+            self.position = [[-2.7784,-3.4222,2.0414],
+                             [-3.3457,-3.0119,2.0477],
+                             [-2.7750,-3.4128,1.7414],
+                             [-3.3426,-3.0031,1.7478]]   #  x>0 y>0 z>0

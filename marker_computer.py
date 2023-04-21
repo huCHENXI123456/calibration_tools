@@ -11,6 +11,7 @@ from mpl_toolkits.mplot3d import axes3d
 # from tools.marker_data import Marker_0
 import marker_data as m_c
 import marker_process as m_p
+import marker_station as m_s
 
 # 绘制四个角点
 def plota(p):
@@ -211,7 +212,7 @@ def save_station(ret, file_name, station_id, rot_angle, trans_position):
             f.writelines(
                 "\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")
             f.writelines(
-                "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.5" + "\n")
+                "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.0" + "\n")
             f.writelines("\t} \n")
             f.writelines("\tsolve_pose: true" + "\n")
             f.writelines("\tscale: 2.0" + "\n")
@@ -237,26 +238,7 @@ if __name__ == '__main__':
     m7 = m_c.RightMarker_R0() 
 
     # old station
-    if m_c.MARKER_TYPE == 0:
-        ret.append(markerdata(m0))
-        ret.append(markerdata(m1))
-        ret.append(markerdata(m2))
-        ret.append(markerdata(m3))
-        ret.append(markerdata(m4))
-        ret.append(markerdata(m5))
-        ret.append(markerdata(m6))
-        ret.append(markerdata(m7))    
-        if True:
-            plota(ret[0])
-            plota(ret[1])
-            plota(ret[2])
-            plota(ret[3])
-            plota(ret[4])
-            plota(ret[5])
-            plota(ret[6])
-            plota(ret[7])
-
-    elif m_c.MARKER_TYPE == 1:  # laika station
+    if m_c.MARKER_TYPE == 1:  # laika station
         ret.append(markerpostion(m0))    
         ret.append(markerpostion(m1))
         ret.append(markerpostion(m2))
@@ -276,6 +258,7 @@ if __name__ == '__main__':
             plota(ret[7])          
     else:
         print("noting to do!")
+
     print("#"*60)
     if False:
         print("The lenght of marker nums: ", len(ret))
@@ -286,5 +269,5 @@ if __name__ == '__main__':
             print("the leftDown of 3: ", ret[i][2])
             print("the rightDown of 4: ", ret[i][3])
 
-    save_station(ret, file_name, m_c.station_id, m_c.init_yaw, m_c.init_p)
+    m_s.save_station(ret, file_name, m_c.station_id)
     print("--- generator ", file_name, " done!!!!!!!!! ---")

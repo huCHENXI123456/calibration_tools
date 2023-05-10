@@ -85,6 +85,7 @@ def save_station(ret, file_name, station_id):
             
             if i == 0:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
             if i == 1 or i == 2:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
@@ -92,20 +93,24 @@ def save_station(ret, file_name, station_id):
             if i == 3:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
-            if i == 4:
+            
+            if i == 4:    # The leftFront marker
+                f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
+                f.writelines("\t# observers: FRONT_WIDE_CAMERA " + "\n")
+            if i == 5:    # The leftRear marker
+                f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
+            if i == 6:    # The rightFront marker
+                f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
+                f.writelines("\t# observers: FRONT_WIDE_CAMERA " + "\n")
+            if i == 7:      # The rightRear marker
+                f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
+
+            if i == 8:      # The leftMiddle marker
                 f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
                 f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
-            if i == 5:
-                f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
-            if i == 6:
+            if i == 9:      # The rightMiddle marker
                 f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
                 f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
-            if i == 7:
-                f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
-            if i == 8:
-                f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
-            if i == 9:
-                f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
 
             f.writelines("\tused: true"+"\n")
             f.writelines(

@@ -6,9 +6,6 @@ import numpy as np
 import marker_data as m_c
 import marker_process as m_p
 
-
-
-
 def save_station(ret, file_name, station_id):
     with open(file_name, 'w+') as f:
         f.write("name: " + "\"Deepway\"" + "\n")
@@ -95,22 +92,22 @@ def save_station(ret, file_name, station_id):
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
             
             if i == 4:    # The leftFront marker
-                f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
-                f.writelines("\t# observers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
             if i == 5:    # The leftRear marker
-                f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
             if i == 6:    # The rightFront marker
-                f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
-                f.writelines("\t# observers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
             if i == 7:      # The rightRear marker
-                f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
             if i == 8:      # The leftMiddle marker
-                f.writelines("\t# observers: LEFT_FRONT_CAMERA " + "\n")
-                f.writelines("\t# observers: LEFT_REAR_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
             if i == 9:      # The rightMiddle marker
-                f.writelines("\t# observers: RIGHT_FRONT_CAMERA " + "\n")
-                f.writelines("\t# observers: RIGHT_REAR_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
             f.writelines("\tused: true"+"\n")
             f.writelines(
@@ -124,7 +121,7 @@ def save_station(ret, file_name, station_id):
             f.writelines("} \n")
     f.close()
 
-def save_station_cp(ret, file_name, station_id, _angle):
+def save_station_cp(ret, file_name, station_id, init_yaw, poffset):
     with open(file_name, 'w+') as f:
         f.write("name: " + "\"Deepway\"" + "\n")
         f.write("id: " + str(station_id) + "\n")
@@ -139,12 +136,10 @@ def save_station_cp(ret, file_name, station_id, _angle):
             y1, p1, r1 = m_p.convert_eular(R)
             euler_out = m_p.rot_to_eular(R)
             # component angle and translation
-                        
-            # R_z_set = m_p.convert_rotation(_angle, 0, 0)
-            R_z_set = m_p.convert_rotation(0, _angle, 0)
-            # R_z_set = m_p.convert_rotation(_angle, 0, 0)
+            # R_z_set = m_p.convert_rotation(yaw, 0, 0)
+            R_z_set = m_p.convert_rotation(init_yaw, 0, 0)
             R_c = np.dot(R_z_set, R)
-            t_c = np.dot(R_z_set, t)
+            t_c = np.dot(R_z_set, t) + np.array(poffset)
             y1_c, p1_c, r1_c = m_p.convert_eular(R_c)
 
             # eular
@@ -160,6 +155,7 @@ def save_station_cp(ret, file_name, station_id, _angle):
             if False:
                 R1 = m_p.convert_rotation(y1, p1, r1)
                 print("[main] verify R convert: ", R1)
+
 
             f.write("markers { \n")
             f.write("\tid: " + str(i+1) + "\n")
@@ -187,6 +183,12 @@ def save_station_cp(ret, file_name, station_id, _angle):
             if i == 7:
                 f.write("\tname: " + "\"" + "P8" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "P8" + "\"" + "\n")
+            if i == 8:
+                f.write("\tname: " + "\"" + "P9" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P9" + "\"" + "\n")
+            if i == 9:
+                f.write("\tname: " + "\"" + "P10" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "P10" + "\"" + "\n")
 
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")
@@ -205,6 +207,7 @@ def save_station_cp(ret, file_name, station_id, _angle):
             
             if i == 0:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+                f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
             if i == 1 or i == 2:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
@@ -212,13 +215,23 @@ def save_station_cp(ret, file_name, station_id, _angle):
             if i == 3:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
-            if i == 4:
+            
+            if i == 4:    # The leftFront marker
                 f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
-            if i == 5:
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+            if i == 5:    # The leftRear marker
                 f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
-            if i == 6:
+            if i == 6:    # The rightFront marker
                 f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
-            if i == 7:
+                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
+            if i == 7:      # The rightRear marker
+                f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
+
+            if i == 8:      # The leftMiddle marker
+                f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
+            if i == 9:      # The rightMiddle marker
+                f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
                 f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
             f.writelines("\tused: true"+"\n")
@@ -228,7 +241,7 @@ def save_station_cp(ret, file_name, station_id, _angle):
                 "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.0" + "\n")
             f.writelines("\t} \n")
             f.writelines("\tsolve_pose: true" + "\n")
-            f.writelines("\tscale: 2.0" + "\n")
+            f.writelines("\tscale: 2.5" + "\n")
             f.writelines("\tuse_opencv: true" + "\n")
             f.writelines("} \n")
     f.close()

@@ -123,6 +123,7 @@ if __name__ == '__main__':
     ret = []
     ###########################################
     file_name = m_c.CAR_ID + "_" + str(m_c.station_id) + '.prototxt'
+    file_name_n = m_c.CAR_ID + "_" + str(m_c.station_id) + '_c.prototxt'
     # Marker of station, adjust the number of marker class
     # step 1: define class
     m0 = m_c.FrontMarker_0()   # P1
@@ -137,7 +138,7 @@ if __name__ == '__main__':
     m8 = m_c.LeftMarker_M0()   # P9
     m9 = m_c.RightMarker_M0()  # P10 
 
-    # old station
+    # new station
     if m_c.MARKER_TYPE == 1:  # laika station
         ret.append(markerpostion(m0))    
         ret.append(markerpostion(m1))
@@ -175,4 +176,7 @@ if __name__ == '__main__':
             print("the rightDown of 4: ", ret[i][3])
 
     m_s.save_station(ret, file_name, m_c.station_id)
+    m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)
+
     print("--- generator ", file_name, " done!!!!!!!!! ---")
+    print("--- generator ", file_name_n, " done!!!!!!!!! ---")

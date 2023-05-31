@@ -64,7 +64,22 @@ def save_station(ret, file_name, station_id):
             if i == 9:
                 f.write("\tname: " + "\"" + "P10" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "P10" + "\"" + "\n")
-
+            if i == 10:
+                f.write("\tname: " + "\"" + "F1" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F1" + "\"" + "\n")                
+            if i == 11:
+                f.write("\tname: " + "\"" + "F2" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F2" + "\"" + "\n")  
+            if i == 12:
+                f.write("\tname: " + "\"" + "F3" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F3" + "\"" + "\n")  
+            if i == 13:
+                f.write("\tname: " + "\"" + "F4" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F4" + "\"" + "\n")  
+            if i == 14:
+                f.write("\tname: " + "\"" + "F5" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F5" + "\"" + "\n")  
+                                                                
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")
             f.writelines("\t\tframe_id: "+"\"world\"" + "\n")
@@ -109,6 +124,19 @@ def save_station(ret, file_name, station_id):
                 f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
                 f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
+            if i == 10:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+            if i == 11:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_FISHEYE_CAMERA " + "\n")
+            if i == 12:      # The  marker
+                f.writelines("\tobservers: LEFT_FISHEYE_CAMERA " + "\n")
+            if i == 13:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
+            if i == 14:      # The  marker
+                f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
+                                                                                            
             f.writelines("\tused: true"+"\n")
             f.writelines(
                 "\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")
@@ -190,7 +218,21 @@ def save_station_cp(ret, file_name, station_id, init_yaw, poffset):
             if i == 9:
                 f.write("\tname: " + "\"" + "P10" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "P10" + "\"" + "\n")
-
+            if i == 10:
+                f.write("\tname: " + "\"" + "F1" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F1" + "\"" + "\n")                
+            if i == 11:
+                f.write("\tname: " + "\"" + "F2" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F2" + "\"" + "\n")  
+            if i == 12:
+                f.write("\tname: " + "\"" + "F3" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F3" + "\"" + "\n")  
+            if i == 13:
+                f.write("\tname: " + "\"" + "F4" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F4" + "\"" + "\n")  
+            if i == 14:
+                f.write("\tname: " + "\"" + "F5" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "F5" + "\"" + "\n")  
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")
             f.writelines("\t\tframe_id: "+"\"world\"" + "\n")
@@ -235,6 +277,19 @@ def save_station_cp(ret, file_name, station_id, init_yaw, poffset):
                 f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
                 f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
+            if i == 10:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+            if i == 11:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+                f.writelines("\tobservers: LEFT_FISHEYE_CAMERA " + "\n")
+            if i == 12:      # The  marker
+                f.writelines("\tobservers: LEFT_FISHEYE_CAMERA " + "\n")
+            if i == 13:      # The  marker
+                f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
+                f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
+            if i == 14:      # The  marker
+                f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
+            
             f.writelines("\tused: true"+"\n")
             f.writelines(
                 "\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")

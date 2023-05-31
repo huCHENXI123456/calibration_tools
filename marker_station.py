@@ -115,6 +115,7 @@ def save_station(ret, file_name, station_id):
             f.writelines(
                 "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.0" + "\n")
             f.writelines("\t} \n")
+            f.writelines("\trefinement: true")
             f.writelines("\tsolve_pose: true" + "\n")
             f.writelines("\tscale: 2.5" + "\n")
             f.writelines("\tuse_opencv: true" + "\n")

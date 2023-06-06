@@ -194,4 +194,3 @@ if __name__ == '__main__':
     # m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)
 
     print("--- generator ", file_name, " done!!!!!!!!! ---")
-    print("--- generator ", file_name_n, " done!!!!!!!!! ---")

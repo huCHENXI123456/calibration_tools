@@ -97,7 +97,6 @@ def save_station(ret, file_name, station_id):
             
             if i == 0:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
-                f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
             if i == 1 or i == 2:    # The Front marker
                 f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
                 f.writelines("\tobservers: FRONT_MIDDLE_CAMERA " + "\n")
@@ -108,21 +107,19 @@ def save_station(ret, file_name, station_id):
             
             if i == 4:    # The leftFront marker
                 f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
-                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
             if i == 5:    # The leftRear marker
                 f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
             if i == 6:    # The rightFront marker
                 f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
-                f.writelines("\tobservers: FRONT_WIDE_CAMERA " + "\n")
             if i == 7:      # The rightRear marker
                 f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
-            if i == 8:      # The leftMiddle marker
-                f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
-                f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
-            if i == 9:      # The rightMiddle marker
-                f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
-                f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
+            # if i == 8:      # The leftMiddle marker
+            #     f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
+            #     f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
+            # if i == 9:      # The rightMiddle marker
+            #     f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
+            #     f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
             if i == 10:      # The  marker
                 f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
@@ -145,7 +142,7 @@ def save_station(ret, file_name, station_id):
             f.writelines("\t} \n")
             f.writelines("\trefinement: true")
             f.writelines("\tsolve_pose: true" + "\n")
-            f.writelines("\tscale: 2.5" + "\n")
+            f.writelines("\tscale: 1.5" + "\n")
             f.writelines("\tuse_opencv: true" + "\n")
             f.writelines("} \n")
     f.close()

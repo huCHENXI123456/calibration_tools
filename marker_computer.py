@@ -144,46 +144,21 @@ if __name__ == '__main__':
     m13 = m_c.RightFishMarker_R0()      # F4
     m14 = m_c.RightFishMarker_R1()      # F5
 
-    
-    # new station
-    if m_c.MARKER_TYPE == 0:
-        ret.append(markerpostion(m0))    
-        ret.append(markerpostion(m1))
-        ret.append(markerpostion(m2))
-        ret.append(markerpostion(m3))
-        ret.append(markerpostion(m4))
-        ret.append(markerpostion(m5))
-        ret.append(markerpostion(m6))
-        ret.append(markerpostion(m7))   
-                    
-    if m_c.MARKER_TYPE == 1:
-        ret.append(markerpostion(m0))    
-        ret.append(markerpostion(m1))
-        ret.append(markerpostion(m2))
-        ret.append(markerpostion(m3))
-        ret.append(markerpostion(m4))
-        ret.append(markerpostion(m5))
-        ret.append(markerpostion(m6))
-        ret.append(markerpostion(m7))          
-        ret.append(markerpostion(m8))
-        ret.append(markerpostion(m9))  
-        
-    if m_c.MARKER_TYPE == 2:
-        ret.append(markerpostion(m0))    
-        ret.append(markerpostion(m1))
-        ret.append(markerpostion(m2))
-        ret.append(markerpostion(m3))
-        ret.append(markerpostion(m4))
-        ret.append(markerpostion(m5))
-        ret.append(markerpostion(m6))
-        ret.append(markerpostion(m7))          
-        ret.append(markerpostion(m8))
-        ret.append(markerpostion(m9)) 
-        ret.append(markerpostion(m10)) 
-        ret.append(markerpostion(m11)) 
-        ret.append(markerpostion(m12)) 
-        ret.append(markerpostion(m13)) 
-        ret.append(markerpostion(m14)) 
+    ret.append(markerpostion(m0))    
+    ret.append(markerpostion(m1))
+    ret.append(markerpostion(m2))
+    ret.append(markerpostion(m3))
+    ret.append(markerpostion(m4))
+    ret.append(markerpostion(m5))
+    ret.append(markerpostion(m6))
+    ret.append(markerpostion(m7))          
+    ret.append(markerpostion(m8))
+    ret.append(markerpostion(m9)) 
+    ret.append(markerpostion(m10)) 
+    ret.append(markerpostion(m11)) 
+    ret.append(markerpostion(m12)) 
+    ret.append(markerpostion(m13)) 
+    ret.append(markerpostion(m14)) 
         
     if True:
         plota(ret[0], m0.name)
@@ -197,7 +172,7 @@ if __name__ == '__main__':
     if False: 
         plota(ret[8], m8.name)
         plota(ret[9], m9.name)
-    if False:
+    if True:
         plota(ret[10], m10.name)
         plota(ret[11], m11.name)
         plota(ret[12], m12.name)
@@ -216,7 +191,7 @@ if __name__ == '__main__':
             print("the rightDown of 4: ", ret[i][3])
 
     m_s.save_station(ret, file_name, m_c.station_id)
-    m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)
+    # m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)
 
     print("--- generator ", file_name, " done!!!!!!!!! ---")
     print("--- generator ", file_name_n, " done!!!!!!!!! ---")

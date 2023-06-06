@@ -162,24 +162,27 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 10.080918778547078
-			y: 3.0596136203843742
-			z: 2.7598285966023224
+			x: 10.031302571405279
+			y: 2.9812143202937516
+			z: 2.7826657724621575
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -0.30716244877923266
-			pitch: 1.5560582899558089
-			roll: 2.420580411544445
+			yaw: -2.639981736536252
+			pitch: 1.5633944345062758
+			roll: -0.26154960197142507
 		} 
 	} 
+	observers: FRONT_WIDE_CAMERA 
 	used: true
 	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
 	roi { 
 		auto_roi: true 
 		scale: 2.0
 	} 
-	solve_pose: true
+	refinement: true	
+  solve_pose: true
+	scale: 1.5
 	use_opencv: true
 } 
 markers { 
@@ -190,24 +193,29 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 11.664098348024334
-			y: 0.9865488403490053
-			z: 2.9965659201010126
+			x: 11.665053845477512
+			y: 0.9918442516466474
+			z: 2.994180837281235
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.6109101926235591
-			pitch: 1.5066085780528764
-			roll: -2.934104424248936
+			yaw: 0.6027137399438133
+			pitch: 1.5059437083794374
+			roll: -2.9420493244571415
 		} 
 	} 
+	observers: FRONT_WIDE_CAMERA 
+	observers: FRONT_MIDDLE_CAMERA 
+	observers: FRONT_LONG_CAMERA 
 	used: true
 	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
 	roi { 
 		auto_roi: true 
 		scale: 2.0
 	} 
-	solve_pose: true
+	refinement: true	
+  solve_pose: true
+	scale: 1.5
 	use_opencv: true
 } 
 markers { 
@@ -218,24 +226,29 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 12.19876865302763
-			y: -0.5536374375787985
-			z: 2.9722642669431596
+			x: 12.297597780354076
+			y: -0.44744826670946874
+			z: 3.0272738139646465
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.3952676121680627
-			pitch: 1.5042918497239697
-			roll: -1.6894556191622028
+			yaw: -0.12477401759461967
+			pitch: 1.5250661217541344
+			roll: -2.9414700545278407
 		} 
 	} 
+	observers: FRONT_WIDE_CAMERA 
+	observers: FRONT_MIDDLE_CAMERA 
+	observers: FRONT_LONG_CAMERA 
 	used: true
 	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
 	roi { 
 		auto_roi: true 
 		scale: 2.0
 	} 
-	solve_pose: true
+	refinement: true	
+  solve_pose: true
+	scale: 1.5
 	use_opencv: true
 } 
 markers { 
@@ -246,23 +259,27 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 11.825424653375437
-			y: -2.1554385221865298
-			z: 2.686447512949608
+			x: 11.827605130005047
+			y: -2.1508836087359784
+			z: 2.682874369244457
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.256096881835069
-			pitch: 1.5499868158633736
-			roll: -2.52185839056954
+			yaw: 0.2449932536285479
+			pitch: 1.5513548996081798
+			roll: -2.5307164155320327
 		} 
 	} 
+	observers: FRONT_WIDE_CAMERA 
+	observers: FRONT_MIDDLE_CAMERA 
 	used: true
 	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
 	roi { 
 		auto_roi: true 
 		scale: 2.0
 	} 
-	solve_pose: true
+	refinement: true	
+  solve_pose: true
+	scale: 1.5
 	use_opencv: true
-}
+} 

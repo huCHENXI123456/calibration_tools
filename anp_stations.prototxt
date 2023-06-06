@@ -1,0 +1,268 @@
+name: "TianJin"
+id: 11
+frame_id: "world"
+rear_load: true
+markers {
+  id: 1
+  name: "F1"
+  frame_id: "F1"
+  type: CHESS_BOARD
+  pose {
+    frame_id: "world"
+    position {
+      x: 7.4165645
+      y: 0.29323226
+      z: 0.022747995
+    }
+    euler_angles {
+      euler_order: XYZ
+      yaw: 3.1415331
+      pitch: 0.038472243
+      roll: -0.0070869643
+    }
+  }
+  observers: FRONT_FISHEYE_CAMERA
+  used: true
+  data: "rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+  roi {
+    auto_roi: true
+    scale: 1.5
+  }
+  solve_pose: true
+  scale: 1.5
+  use_opencv: true
+}
+markers {
+  id: 2
+  name: "L1"
+  frame_id: "L1"
+  type: CHESS_BOARD
+  pose {
+    frame_id: "world"
+    position {
+      x: 6.6754606
+      y: 1.6562276
+      z: 0.026250497
+    }
+    euler_angles {
+      euler_order: XYZ
+      yaw: -1.5671797
+      pitch: -0.0049746623
+      roll: 0.0021523361
+    }
+  }
+  observers: FRONT_FISHEYE_CAMERA
+  observers: LEFT_FISHEYE_CAMERA
+  used: true
+  data: "rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+  roi {
+    auto_roi: true
+    scale: 2
+  }
+  solve_pose: true
+  scale: 2.5
+  use_opencv: true
+}
+markers {
+  id: 3
+  name: "L2"
+  frame_id: "L2"
+  type: CHESS_BOARD
+  pose {
+    frame_id: "world"
+    position {
+      x: 4.91594769
+      y: 2.0685985
+      z: 0.019216124
+    }
+    euler_angles {
+      euler_order: XYZ
+      yaw: -1.570186
+      pitch: 0.054662816
+      roll: 0.014963525
+    }
+  }
+  observers: LEFT_FISHEYE_CAMERA
+  used: true
+  data: "rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+  roi {
+    auto_roi: true
+    scale: 2
+  }
+  solve_pose: true
+  scale: 2.5
+  use_opencv: true
+}
+markers {
+  id: 4
+  name: "R1"
+  frame_id: "R1"
+  type: CHESS_BOARD
+  pose {
+    frame_id: "world"
+    position {
+      x: 7.351806
+      y: -1.6987077
+      z: 0.014488319
+    }
+    euler_angles {
+      euler_order: XYZ
+      yaw: 1.5779835
+      pitch: 0.0066169179
+      roll: -0.008559688
+    }
+  }
+  observers: FRONT_FISHEYE_CAMERA
+  observers: RIGHT_FISHEYE_CAMERA
+  used: true
+  data: "rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+  roi {
+    auto_roi: true
+    scale: 2
+  }
+  solve_pose: true
+  scale: 2.5
+  use_opencv: true
+}
+markers {
+  id: 5
+  name: "R2"
+  frame_id: "R2"
+  type: CHESS_BOARD
+  pose {
+    frame_id: "world"
+    position {
+      x: 5.61374666
+      y: -2.0614066
+      z: 0.0079144817
+    }
+    euler_angles {
+      euler_order: XYZ
+      yaw: 1.5692223
+      pitch: 0.05288
+      roll: -0.0099746138
+    }
+  }
+  observers: RIGHT_FISHEYE_CAMERA
+  used: true
+  data: "rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+  roi {
+    auto_roi: true
+    scale: 2
+  }
+  solve_pose: true
+  scale: 2.5
+  use_opencv: true
+}
+markers { 
+	id: 6
+	name: "P1"
+	frame_id: "P1"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 10.080918778547078
+			y: 3.0596136203843742
+			z: 2.7598285966023224
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -0.30716244877923266
+			pitch: 1.5560582899558089
+			roll: 2.420580411544445
+		} 
+	} 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	solve_pose: true
+	use_opencv: true
+} 
+markers { 
+	id: 7
+	name: "P2"
+	frame_id: "P2"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 11.664098348024334
+			y: 0.9865488403490053
+			z: 2.9965659201010126
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.6109101926235591
+			pitch: 1.5066085780528764
+			roll: -2.934104424248936
+		} 
+	} 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	solve_pose: true
+	use_opencv: true
+} 
+markers { 
+	id: 8
+	name: "P3"
+	frame_id: "P3"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 12.19876865302763
+			y: -0.5536374375787985
+			z: 2.9722642669431596
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 1.3952676121680627
+			pitch: 1.5042918497239697
+			roll: -1.6894556191622028
+		} 
+	} 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	solve_pose: true
+	use_opencv: true
+} 
+markers { 
+	id: 9
+	name: "P4"
+	frame_id: "P4"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 11.825424653375437
+			y: -2.1554385221865298
+			z: 2.686447512949608
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.256096881835069
+			pitch: 1.5499868158633736
+			roll: -2.52185839056954
+		} 
+	} 
+	used: true
+	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	solve_pose: true
+	use_opencv: true
+}

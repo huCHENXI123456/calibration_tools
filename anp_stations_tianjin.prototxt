@@ -1,5 +1,5 @@
-name: "TianJin"
-id: 11
+name: "Deepway"
+id: 0
 frame_id: "world"
 rear_load: true
 markers {
@@ -28,6 +28,7 @@ markers {
     auto_roi: true
     scale: 1.5
   }
+  refinement: true
   solve_pose: true
   scale: 1.5
   use_opencv: true
@@ -59,6 +60,7 @@ markers {
     auto_roi: true
     scale: 2
   }
+  refinement: true
   solve_pose: true
   scale: 2.5
   use_opencv: true
@@ -89,6 +91,7 @@ markers {
     auto_roi: true
     scale: 2
   }
+  refinement: true
   solve_pose: true
   scale: 2.5
   use_opencv: true
@@ -120,6 +123,7 @@ markers {
     auto_roi: true
     scale: 2
   }
+  refinement: true
   solve_pose: true
   scale: 2.5
   use_opencv: true
@@ -150,6 +154,7 @@ markers {
     auto_roi: true
     scale: 2
   }
+  refinement: true
   solve_pose: true
   scale: 2.5
   use_opencv: true

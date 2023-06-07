@@ -30,7 +30,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -63,7 +63,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -96,7 +96,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -128,7 +128,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -159,7 +159,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -170,15 +170,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 1.697607868599616
-			y: 2.884599128528164
-			z: 2.2020998130781804
+			x: 1.6790788990391723
+			y: 2.888072952546099
+			z: 2.217036827936361
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.7867284723406577
-			pitch: 1.5547069409790686
-			roll: 1.5610060714372358
+			yaw: 1.7247534169676664
+			pitch: 1.5533154294555516
+			roll: 2.5444081054457275
 		} 
 	} 
 	observers: LEFT_REAR_CAMERA 
@@ -190,7 +190,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -221,7 +221,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -252,7 +252,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -282,7 +282,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -312,7 +312,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -343,7 +343,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -375,7 +375,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -406,7 +406,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -438,7 +438,7 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 
 markers { 
@@ -469,6 +469,6 @@ markers {
 	} 
 	refinement: true
 	solve_pose: true
-	scale: 1.5
+	scale: 1.0
 	use_opencv: true
 } 

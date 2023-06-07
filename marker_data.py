@@ -165,10 +165,10 @@ class LeftFishMarker_L0:
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
             self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
-            self.position = [[2.198,1.628,0.029],
-                             [2.195,1.327,0.030],
-                             [1.499,1.630,0.027],
-                             [1.497,1.328,0.029]]    #  x>0 y>0 z>0            
+            self.position = [[1.499,1.630,0.027],
+                             [2.198,1.628,0.029],
+                             [1.497,1.328,0.029],
+                             [2.195,1.327,0.030]]    #  x>0 y>0 z>0             
             
 class LeftFishMarker_L1:
       def __init__(self):
@@ -176,10 +176,10 @@ class LeftFishMarker_L1:
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
             self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
-            self.position = [[0.442,2.041,0.031],
-                             [0.445,1.756,0.015],
-                             [-0.259,2.046,0.020],
-                             [-0.262,1.760,0.007]]   #  x>0 y>0 z>0  
+            self.position = [[-0.259,2.046,0.020],
+                             [0.442,2.041,0.031],
+                             [-0.262,1.760,0.007],
+                             [0.445,1.756,0.015]]   #  x>0 y>0 z>0  
             
 class RightFishMarker_R0:
       def __init__(self):
@@ -187,10 +187,10 @@ class RightFishMarker_R0:
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
             self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
-            self.position = [[2.150,-1.430,0.015],
-                             [2.154,-1.731,0.016],
-                             [1.451,-1.431,0.009],
-                             [1.455,-1.734,0.007]]   #  x>0 y>0 z>0  
+            self.position = [[2.154,-1.731,0.016],
+                             [1.455,-1.734,0.007],
+                             [2.150,-1.430,0.015],
+                             [1.451,-1.431,0.009]]   #  x>0 y>0 z>0 
             
 class RightFishMarker_R1:
       def __init__(self):
@@ -199,8 +199,8 @@ class RightFishMarker_R1:
             self.init_angle_v = [0,0,0]
             self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
             self.H = [3.7132,3.6356,3.7048,3.6258]
-            self.position = [[0.422,-1.791,-0.007],
-                             [0.413,-2.074,0.010],
-                             [-0.285,-1.784,-0.016],
-                             [-0.288,-2.075,-0.007]]   #  x>0 y>0 z>0  
+            self.position = [[0.413,-2.074,0.010],
+                             [-0.288,-2.075,-0.007],
+                             [0.422,-1.791,-0.007],
+                             [-0.285,-1.784,-0.016]]   #  x>0 y>0 z>0  
                                                      

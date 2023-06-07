@@ -16,9 +16,9 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -2.666166223557679
+			yaw: -2.6661662235577
 			pitch: 1.5645595453469545
-			roll: -0.2811515397096822
+			roll: -0.28115153970970314
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -42,14 +42,14 @@ markers {
 		frame_id: "world"
 		position {
 			x: 11.657999171089255
-			y: 0.929230210308723
+			y: 0.9292302103087229
 			z: 2.9901333156496976
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.5951822170349903
+			yaw: 0.5951822170349906
 			pitch: 1.5066983694871787
-			roll: -2.942166157544094
+			roll: -2.9421661575440936
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -80,9 +80,9 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -0.09617236948385706
+			yaw: -0.09617236948385653
 			pitch: 1.5308755938233674
-			roll: -2.904082575943933
+			roll: -2.9040825759439324
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -107,15 +107,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 11.799618826200899
-			y: -2.214958873158009
+			x: 11.7996188262009
+			y: -2.2149588731580088
 			z: 2.6799582999724025
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.25336943647669063
+			yaw: 0.25336943647668725
 			pitch: 1.5500941067571374
-			roll: -2.5163780358665595
+			roll: -2.516378035866563
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -145,7 +145,7 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.3463019778083358
+			yaw: 1.346301977808336
 			pitch: 1.5435956509419275
 			roll: 3.13778603688366
 		} 
@@ -176,9 +176,9 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.7247534169676664
+			yaw: 1.7247534169676617
 			pitch: 1.5533154294555516
-			roll: 2.5444081054457275
+			roll: 2.5444081054457226
 		} 
 	} 
 	observers: LEFT_REAR_CAMERA 
@@ -207,9 +207,9 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -1.9300814656203815
+			yaw: -1.9300814656203822
 			pitch: 1.553782238496341
-			roll: 2.4783763534959986
+			roll: 2.4783763534959977
 		} 
 	} 
 	observers: RIGHT_FRONT_CAMERA 
@@ -232,15 +232,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 2.10503005509434
+			x: 2.1050300550943404
 			y: -3.472759146094641
 			z: 2.3180542956984027
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.6589761098293319
+			yaw: 1.6589761098293383
 			pitch: 1.5428946054554644
-			roll: 0.9403564006873777
+			roll: 0.9403564006873841
 		} 
 	} 
 	observers: RIGHT_REAR_CAMERA 
@@ -265,13 +265,13 @@ markers {
 		position {
 			x: 7.174080145050443
 			y: 1.8274570920919673
-			z: 0.027330885264055544
+			z: 0.027330885264055565
 		} 
 		euler_angles { 
 			euler_order: XYZ
 			yaw: 3.1363675001866134
-			pitch: 0.002162792623068241
-			roll: 0.0049815561874106806
+			pitch: 0.0021627926230682643
+			roll: 0.00498155618741066
 		} 
 	} 
 	used: true
@@ -299,9 +299,9 @@ markers {
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -2.1328874803359446
-			pitch: 1.5489472350479188
-			roll: 2.7945692238331366
+			yaw: -2.132887480335944
+			pitch: 1.5489472350479185
+			roll: 2.794569223833137
 		} 
 	} 
 	used: true
@@ -324,14 +324,14 @@ markers {
 		frame_id: "world"
 		position {
 			x: 7.406054055542464
-			y: 0.26128604476695116
-			z: 0.024812211569892856
+			y: 0.2612860447669513
+			z: 0.024812211569892863
 		} 
 		euler_angles { 
 			euler_order: XYZ
 			yaw: 3.1369632816829838
 			pitch: 0.04561699988110506
-			roll: -0.009930592062437937
+			roll: -0.00993059206243795
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -354,15 +354,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 7.174080145050443
-			y: 1.8274570920919673
-			z: 0.027330885264055544
+			x: 6.672719846181258
+			y: 1.629334142087623
+			z: 0.02724880677666791
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 3.1363675001866134
-			pitch: 0.002162792623068241
-			roll: 0.0049815561874106806
+			yaw: -1.5739120267542845
+			pitch: -0.004986118955752353
+			roll: 0.002152252641263657
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -386,15 +386,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 5.417509206649074
-			y: 2.249753872415799
-			z: 0.038062030334979804
+			x: 4.917265493517945
+			y: 2.0524963679220067
+			z: 0.02113085138708974
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 3.1379697419076216
-			pitch: 0.01363402205572768
-			roll: -0.05078938100580487
+			yaw: -1.5756562356135069
+			pitch: 0.05081087778717933
+			roll: 0.013553624341583545
 		} 
 	} 
 	observers: LEFT_FISHEYE_CAMERA 
@@ -417,15 +417,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 7.1246573852381
-			y: -1.2303023035780807
-			z: 0.01395952434308442
+			x: 7.328151240981886
+			y: -1.7299301220134953
+			z: 0.015243719639796467
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -3.1335278157489594
-			pitch: 0.010738206449298624
-			roll: -0.001711026141805775
+			yaw: 1.575295746861276
+			pitch: -0.001749401386765484
+			roll: -0.010732021615819024
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -449,15 +449,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 5.3949414159244125
-			y: -1.58318232763299
-			z: -0.0180658270483632
+			x: 5.589314911238693
+			y: -2.0831533617648157
+			z: 0.008323370489753415
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 3.129637880330344
-			pitch: 0.018813791061979307
-			roll: 0.045417159170926556
+			yaw: 1.5633412356843468
+			pitch: 0.045509218850712546
+			roll: -0.018589870511348857
 		} 
 	} 
 	observers: RIGHT_FISHEYE_CAMERA 

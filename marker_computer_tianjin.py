@@ -73,8 +73,7 @@ if __name__ == '__main__':
     print(">>>>>>>>>>>>> CAR ID: ", m_c.CAR_ID)
     ret = []
     ###########################################
-    file_name = m_c.CAR_ID + "_" + str(m_c.station_id) + '.prototxt'
-    file_name_n = m_c.CAR_ID + "_" + str(m_c.station_id) + '_c.prototxt'
+    file_name = 'anp_station_tianjin.prototxt'
     # Marker of station, adjust the number of marker class
     # step 1: define class
     m0 = m_c.FrontMarker_0()   # P1

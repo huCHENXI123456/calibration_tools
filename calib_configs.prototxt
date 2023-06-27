@@ -26,12 +26,12 @@ max_translation_error: 0.15
 calculate_car_pose: true
 design_point_l {
     x:-4.036
-    y:0.522
+    y:0.52
     z:0
 }
 design_point_r {
     x:-4.036
-    y:-0.522
+    y:-0.52
     z:0
 }
 measure_point_l {

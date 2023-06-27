@@ -1,3 +1,3 @@
 #!/bin/bash
-python3 offset_position.py
+python3 offset_position_update.py
 echo "----------- Done -------------"

@@ -6,7 +6,7 @@ import yaml
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
-# from mpl_toolkits.mplot3d import axes3d
+from mpl_toolkits.mplot3d import axes3d
 # import tools.marker_data.Marker_0 as m
 # from tools.marker_data import Marker_0
 import marker_data as m_c
@@ -27,20 +27,20 @@ def plota(p):
     ax.set_zlabel('Z Axes')
     plt.show()
 
-# # 绘制四个角点
-# def plotf(p1,p2,p3,p4):
-#     #3D Plotting
-#     fig = plt.figure()
-#     ax = plt.axes(projection="3d")
-#     ax.scatter(p1[0],p1[1],p1[2],color='b')
-#     ax.scatter(p2[0],p2[1],p2[2],color='g')
-#     ax.scatter(p3[0],p3[1],p3[2],color='r')
-#     ax.scatter(p4[0],p4[1],p4[2],color='y')
-#     #Labeling
-#     ax.set_xlabel('X Axes')
-#     ax.set_ylabel('Y Axes')
-#     ax.set_zlabel('Z Axes')
-#     plt.show()
+# 绘制四个角点
+def plotf(p1,p2,p3,p4):
+    #3D Plotting
+    fig = plt.figure()
+    ax = plt.axes(projection="3d")
+    ax.scatter(p1[0],p1[1],p1[2],color='b')
+    ax.scatter(p2[0],p2[1],p2[2],color='g')
+    ax.scatter(p3[0],p3[1],p3[2],color='r')
+    ax.scatter(p4[0],p4[1],p4[2],color='y')
+    #Labeling
+    ax.set_xlabel('X Axes')
+    ax.set_ylabel('Y Axes')
+    ax.set_zlabel('Z Axes')
+    plt.show()
 
 def deg2rad(d):
     deg = d[0] + d[1]/60.0 + d[2]/3600.0
@@ -118,51 +118,21 @@ if __name__ == '__main__':
     m1 = m_c.FrontMarker_1()    
     m2 = m_c.FrontMarker_2()
     m3 = m_c.FrontMarker_3()
-    m4 = m_c.LeftMarker_F0()    
-    m5 = m_c.LeftMarker_R0() 
-    m6 = m_c.RightMarker_F0()    
-    m7 = m_c.RightMarker_R0() 
 
     # old station
-    if m_c.MARKER_TYPE == 0:
-        ret.append(markerdata(m0))
-        ret.append(markerdata(m1))
-        ret.append(markerdata(m2))
-        ret.append(markerdata(m3))
-        ret.append(markerdata(m4))
-        ret.append(markerdata(m5))
-        ret.append(markerdata(m6))
-        ret.append(markerdata(m7))    
-        # if True:
-            # plota(ret[0])
-            # plota(ret[1])
-            # plota(ret[2])
-            # plota(ret[3])
-            # plota(ret[4])
-            # plota(ret[5])
-            # plota(ret[6])
-            # plota(ret[7])
-
-    elif m_c.MARKER_TYPE == 1:  # laika station
+    if m_c.MARKER_TYPE == 1:  # laika station
         ret.append(markerpostion(m0))    
         ret.append(markerpostion(m1))
         ret.append(markerpostion(m2))
         ret.append(markerpostion(m3))
-        ret.append(markerpostion(m4))
-        ret.append(markerpostion(m5))
-        ret.append(markerpostion(m6))
-        ret.append(markerpostion(m7))        
         if True:
             plota(ret[0])
             plota(ret[1])
             plota(ret[2])
             plota(ret[3])
-            plota(ret[4])
-            plota(ret[5])
-            plota(ret[6])
-            plota(ret[7])          
     else:
         print("noting to do!")
+        
     print("#"*60)
     if False:
         print("The lenght of marker nums: ", len(ret))
@@ -173,7 +143,7 @@ if __name__ == '__main__':
             print("the leftDown of 3: ", ret[i][2])
             print("the rightDown of 4: ", ret[i][3])
 
-    with open('anp_station.prototxt','w+') as f:
+    with open('anp_station_new.prototxt','w+') as f:
         f.write("name: " +"\"Deepway\"" + "\n")
         f.write("id: 1"+ "\n")
         f.write("frame_id: " + "\"world\"" + "\n")
@@ -211,18 +181,6 @@ if __name__ == '__main__':
             if i == 3:
                 f.write("\tname: " + "\"" + str(m3.name) + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + str(m3.name) + "\"" + "\n")
-            if i == 4:
-                f.write("\tname: " + "\"" + str(m4.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m4.name) + "\"" + "\n")
-            if i == 5:
-                f.write("\tname: " + "\"" + str(m5.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m5.name) + "\"" + "\n")
-            if i == 6:
-                f.write("\tname: " + "\"" + str(m6.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m6.name) + "\"" + "\n")
-            if i == 7:
-                f.write("\tname: " + "\"" + str(m7.name) + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + str(m7.name) + "\"" + "\n")  
 
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")

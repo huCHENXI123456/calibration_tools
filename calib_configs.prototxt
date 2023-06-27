@@ -1,0 +1,46 @@
+#Normal: /../../../../data/car_config/,Local_test:/hardware_configs/
+design_hardware_config_path: "../../../../data/car_config"
+hardware_config_path: "/opt/profile/hardware_config.prototxt"
+hardware_config_bakup_path: "/opt/profile/hardware_config_bakup.prototxt"
+calibration_result_path: "/opt/data/calibration/calibration_result.prototxt"
+data_returned: true
+data_dir: "/opt/data/calibration"
+switch_state_timeout: 5000
+calibration_timeout: 40000
+oncalib_timeout: 600000
+wait_image_timeout: 500
+uninit_camera: false
+update_intrinsics: true
+axis_switch: false
+euler_order: YPR
+request_state_change: true
+check_reprojection_error: true
+max_reprojection_error: 4
+mean_reprojection_error: 2
+check_angle_error: true
+max_angle_error: 0.8
+mean_angle_error: 0.2
+check_install_error: true
+max_rotation_error: 0.06
+max_translation_error: 0.15
+calculate_car_pose: true
+design_point_l {
+    x:-4.036
+    y:0.522
+    z:0
+}
+design_point_r {
+    x:-4.036
+    y:-0.522
+    z:0
+}
+measure_point_l {
+    x:-4.0187
+    y:0.4163
+    z:0
+}
+measure_point_r {
+    x:-4.0147
+    y:-0.6077
+    z:0
+}

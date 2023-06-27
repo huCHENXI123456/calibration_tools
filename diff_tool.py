@@ -12,13 +12,18 @@ import csv
 import numpy as np
 import pandas as pd
 import math
+from flask import Flask, render_template
+
+app = Flask(__name__)
 
 cam_name = ["front_wide_camera", "front_long_camera", "front_middle_camera",
             "left_front_camera", "right_front_camera", "left_rear_camera", "right_rear_camera"]
-cam_param = [["name","yaw","pitch","roll","x","y","z"],[],[],[],[],[],[],[]]
-cam_param_1 = [[],[],[],[]]
+cam_param = ["name","yaw","pitch","roll","x","y","z"]
+cam_param_1 = [[],[],[],[]] # item,base,b_002,error
 
-def camera_extringsic(line,cam_n):
+wheel_base = 5.17
+
+def find_camera(line,cam_n):
     r1 = re.findall(pattern=cam_n, string=line, flags=re.S)
     return r1
 
@@ -29,17 +34,9 @@ def add_item(id):
     cam_param_1[id].append("roll")
     cam_param_1[id].append("x")
     cam_param_1[id].append("y")
-    cam_param_1[id].append("z")
+    cam_param_1[id].append("z") 
 
-def save_param(lines, i, j):
-    cam_param[j].append(lines[i].strip().lstrip("name:"))
-    cam_param[j].append(lines[i+15].strip().lstrip("yaw:"))
-    cam_param[j].append(lines[i+16].strip().lstrip("pitch:"))
-    cam_param[j].append(lines[i+17].strip().lstrip("roll:"))
-    cam_param[j].append(lines[i+20].strip().lstrip("x:"))
-    cam_param[j].append(lines[i+21].strip().lstrip("y:"))
-    cam_param[j].append(lines[i+22].strip().lstrip("z:"))    
-
+# find camera name, and offset 15 is rotation and translate
 def save_param_col(lines, i, j):
     cam_param_1[j].append(lines[i].strip().lstrip("name:").strip())
     cam_param_1[j].append(lines[i+15].strip().lstrip("yaw:").strip())
@@ -49,21 +46,6 @@ def save_param_col(lines, i, j):
     cam_param_1[j].append(lines[i+21].strip().lstrip("y:").strip())
     cam_param_1[j].append(lines[i+22].strip().lstrip("z:").strip()) 
 
-def cameras_extrinsic(path):
-    i = 0
-
-    with open(path, 'r') as fp:
-        lines = fp.readlines()
-        for line in lines:            
-            for j in range(len(cam_name)):
-                ret_all = camera_extringsic(line,cam_name[j])
-                if ret_all:
-                    save_param(lines, i, j+1)   # title
-
-            i = i + 1
-        fp.close()
-
-
 def cameras_extrinsic_col(path, k, item):
     i = 0
 
@@ -71,11 +53,11 @@ def cameras_extrinsic_col(path, k, item):
         lines = fp.readlines()
         for line in lines:    
             for j in range(len(cam_name)):     
-                ret_all = camera_extringsic(line,cam_name[j])
+                ret_all = find_camera(line,cam_name[j])
                 if ret_all:
                     if item:
-                        add_item(0)   
-                    save_param_col(lines, i, k)   # title
+                        add_item(0)   # first colume add item
+                    save_param_col(lines, i, k)   # data
 
             i = i + 1
         fp.close()
@@ -93,22 +75,32 @@ def diff_statify(id):
     for i in range(len(cam_param_1[0])):
         if i%7 == 0:
             cam_param_1[id].append("error(degree)(m)")
-        elif i%7 == 1 or i%7 == 2 or i%7 == 3:
+        elif i%7 == 1 or i%7 == 2 or i%7 == 3:  # rotation
             cam_param_1[id].append(str(math.degrees(float(cam_param_1[1][i]) - float(cam_param_1[2][i]))))    # 
-        else:
+        else:   # translate
             cam_param_1[id].append(str(float(cam_param_1[1][i]) - float(cam_param_1[2][i])))
+
+@app.route('/')
+def index():
+    return render_template('result.html')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f1', type=str, default = '../configs/dw_anp/hardware_configs/BASE/')
-    parser.add_argument('-f2', type=str, default = "/home/hcx/work_code/anp_calibration/data/b_003")
+    parser.add_argument('-f1', type=str, default = '../configs/dw_anp/hardware_configs/BASE_REAR')
+    parser.add_argument('-f2', type=str, default = "../data/n_007")
 
     args = parser.parse_args()
 
     path_1 = args.f1 + "/hardware_config.prototxt"
     path_2 = args.f2 + "/hardware_config.prototxt"
 
-    cameras_extrinsic_col(path_1, 1, True)   
+    file_name = "../n_005.csv"
+    cameras_extrinsic_col(path_1, 1, True)   # add title
     cameras_extrinsic_col(path_2, 2, False)
     diff_statify(3)
-    write_file(cam_param_1, "../result_1.csv")    
+    write_file(cam_param_1, file_name)
+
+    a = pd.read_csv(file_name)
+    a.to_html("templates/result.html")
+
+    app.run(debug=True)

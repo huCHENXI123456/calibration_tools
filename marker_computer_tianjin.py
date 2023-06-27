@@ -48,56 +48,10 @@ def deg2rad(d):
     # print("deg: ", deg)
     return math.radians(deg)    #2*math.pi
 
-# vehicle coordinates 车辆坐标
-def marker_point(H,ZA,HAR,V,S,bias):
-    point = []
-    ZA_ = deg2rad(ZA)
-    HAR_ = deg2rad(HAR)
-    V_H = V*math.tan(ZA_)
-    H1 = math.sqrt(S*S - V*V)
-    Hx = H1*math.cos(HAR_)
-    Hy = -H1*math.sin(HAR_)    
-    point.append(Hx+bias[0])
-    point.append(Hy+bias[1])
-    point.append(V+bias[2])
-    if False:
-        print("-"*60)
-        print("ZA_ : ", ZA_)
-        print("HAR_ : ", HAR_)
-        print("H:",H, ",H1:", H1)
-        print("H error: ", H1-H)
-    if True:
-        print("-"*40)
-        print(point[0], " ", point[1], " ", point[2])
-
-    return point
-
 def norm_2(p1,p2):
     dist = np.sqrt(pow((p1[0]-p2[0]),2) + pow((p1[1]-p2[1]),2) + pow((p1[2]-p2[2]),2))
     return dist
 
-def markerdata(m0):
-    # offset 
-    print("------------------- ", m0.name, " -----------------")
-    for h in range(m_c.POINT_N):      
-        # result = np.sum([m0.HAR[h], m0.init_angle_h], axis=0).tolist()
-        m0.HAR[h][0] = m0.HAR[h][0] - m0.init_angle_h[0]   # 度
-        m0.HAR[h][1] = m0.HAR[h][1] - m0.init_angle_h[1]   # 分
-        m0.HAR[h][2] = m0.HAR[h][2] - m0.init_angle_h[2]   # 秒
-
-        m0.ZA[h][0] = -m0.ZA[h][0] + m0.init_angle_v[0]   # 度
-        m0.ZA[h][1] = -m0.ZA[h][1] + m0.init_angle_v[1]   # 分
-        m0.ZA[h][2] = -m0.ZA[h][2] + m0.init_angle_v[2]   # 秒        
-    ret1 = marker_point(m0.H[0],m0.ZA[0],m0.HAR[0],m0.V[0],m0.S[0],m0.init_position)
-    ret2 = marker_point(m0.H[1],m0.ZA[1],m0.HAR[1],m0.V[1],m0.S[1],m0.init_position)
-    ret3 = marker_point(m0.H[2],m0.ZA[2],m0.HAR[2],m0.V[2],m0.S[2],m0.init_position)
-    ret4 = marker_point(m0.H[3],m0.ZA[3],m0.HAR[3],m0.V[3],m0.S[3],m0.init_position)
-    print(ret1)
-    print(ret2)
-    print(ret3)
-    print(ret4)
-    pointSet = [ret1,ret2,ret3,ret4]
-    return pointSet
 
 def markerpostion(m0):
     print("------------------- ", m0.name, " -----------------")
@@ -115,14 +69,11 @@ def markerpostion(m0):
     print("error1: ", 0.7615773 - norm_2(ret1, ret4), ",error2: ", 0.7615773 - norm_2(ret2, ret3))        
     return pointSet
 
-def markerComponent(m0, yaw, offset):
-    print("test")    
-
 if __name__ == '__main__':
     print(">>>>>>>>>>>>> CAR ID: ", m_c.CAR_ID)
     ret = []
     ###########################################
-    file_name = 'anp_station_tianjin.prototxt'
+    file_name = m_c.CAR_ID + "_" + str(m_c.station_id) + '.prototxt'
     file_name_n = m_c.CAR_ID + "_" + str(m_c.station_id) + '_c.prototxt'
     # Marker of station, adjust the number of marker class
     # step 1: define class
@@ -134,7 +85,7 @@ if __name__ == '__main__':
     m5 = m_c.LeftMarker_R0()   # P6 
     m6 = m_c.RightMarker_F0()  # P7 
     m7 = m_c.RightMarker_R0()  # P8 
-    # add rear
+    # # add rear
     m8 = m_c.LeftMarker_M0()   # P9
     m9 = m_c.RightMarker_M0()  # P10 
     # add fisheye
@@ -143,6 +94,9 @@ if __name__ == '__main__':
     m12 = m_c.LeftFishMarker_L1()       # F3
     m13 = m_c.RightFishMarker_R0()      # F4
     m14 = m_c.RightFishMarker_R1()      # F5
+
+    
+    # new station
 
     ret.append(markerpostion(m0))    
     ret.append(markerpostion(m1))
@@ -191,7 +145,6 @@ if __name__ == '__main__':
             print("the rightDown of 4: ", ret[i][3])
 
     m_s.save_station(ret, file_name, m_c.station_id)
-    # m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)
-
     print("--- generator ", file_name, " done!!!!!!!!! ---")
-    print("--- generator ", file_name_n, " done!!!!!!!!! ---")
+    # m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)    
+    # print("--- generator ", file_name_n, " done!!!!!!!!! ---")

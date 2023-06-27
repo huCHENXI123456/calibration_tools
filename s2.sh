@@ -1,3 +1,3 @@
 #!/bin/bash
-python3 marker_computer.py
+python3 marker_computer_tianjin.py
 echo "----------- Done -------------"

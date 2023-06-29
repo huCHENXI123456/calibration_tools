@@ -38,9 +38,9 @@ class Lidar_FrontMarker_0:
         self.init_angle_v = [0,0,0]
         self.init_position = [wheelbase,0.0,0.0]     # 车体坐标系 全站仪和后轴中心点位置偏差: x,y,z
         self.position = [[4.8602, 2.9775, 2.7821],
-                            [5.3424, 2.4697, 2.7804],
-                            [4.8588, 2.9772, 2.4818],
-                            [5.3418, 2.4699, 2.4803]]   #  x>0 y>0 z>0
+                        [5.3424, 2.4697, 2.7804],
+                        [4.8588, 2.9772, 2.4818],
+                        [5.3418, 2.4699, 2.4803]]   #  x>0 y>0 z>0
             
     def markerpostion(self):
         print("------------------- ", self.name, " -----------------")
@@ -51,10 +51,6 @@ class Lidar_FrontMarker_0:
         ret4 = [self.position[3][0]+self.init_position[0], self.position[3][1], self.position[3][2]]
 
         pointSet = [ret1,ret2,ret3,ret4]
-        print(ret1)
-        print(ret2)
-        print(ret3)
-        print(ret4)
         return pointSet
 
 
@@ -97,6 +93,14 @@ for i in range(len(M_C)) :
 print("B_o: \n", B_o)
 
 
+# B_i = []
+# for i in range(len(M_I)) :
+#     B_C = np.dot(R, M_I[i].T)
+#     B_C = B_C + t
+#     B_i.append(B_C)
+    
+# print("B_i: \n", B_i)
 
-m0.plotf(ret, B_o)
+# m0.plotf(ret, B_o)
+# m0.plotf(M_I, M_C)
 

@@ -48,5 +48,5 @@ def parasCameraLog(log_path):
        
 if __name__ == '__main__':
     # log
-    path_1 = "/home/one/calib_data/C/cp_001/01/C++01.txt"
+    path_1 = "/home/one/src/baidu/baidu_calib_v1/anp_calibration/data/b_002/camera_param.txt"
     parasCameraLog(path_1)

@@ -6,7 +6,7 @@ import scipy.linalg as linalg
 
 # car axis x: car rear, y: car right 
 # point position
-wheel_len = 5.175
+wheel_len = 5
 left_struct = [-4.036+wheel_len,0.52,0]    # 对应p3
 right_struct = [-4.036+wheel_len,-0.52, 0]  # 对应p4
 
@@ -88,9 +88,17 @@ def computer_1(pl, pr):
     return t_s_m[0], t_s_m[1], -yaw
     
 if __name__ == '__main__':   
-    #b_002
-    p3 = [-4.0178+wheel_len,0.4168,0]
-    p4 = [-4.0129+wheel_len,-0.6071,0]  
+    # #b_002
+    # p3 = [-4.0178+wheel_len,0.4168,0]
+    # p4 = [-4.0129+wheel_len,-0.6071,0] 
+
+    #b_004-0630
+    # p3 = [-4.0199+wheel_len,0.5578,0]
+    # p4 = [-4.0465+wheel_len,-0.4660,0] 
+
+    #1801-3  -0630
+    p3 = [-4.0203+wheel_len,0.6014,0]
+    p4 = [-4.0324+wheel_len,-0.4157,0] 
     # computer(p1, p2, p3, p4)
     x,y,yaw = computer_1(p3, p4)
     if True:

@@ -3,7 +3,6 @@
 import numpy as np
 import marker_process as m_p
 import matplotlib.pyplot as plt
-import numpy as np
 from mpl_toolkits.mplot3d import axes3d
 ######################################
 ########## Marker coordinate #########
@@ -14,10 +13,11 @@ from mpl_toolkits.mplot3d import axes3d
 # 2 -- 3
 
 # x朝下(used),标定算法使用，y朝右
-M_I = np.array([[0.0, 0.0, 0.0],
-                [0.0, 0.8, 0.0],
-                [0.7, 0.0, 0.0],
-                [0.7, 0.8, 0.0]])
+# offset: 0.01
+M_I = np.array([[0.01, 0.01, 0.0],
+                [0.01, 0.8-0.01, 0.0],
+                [0.7-0.01, 0.01, 0.0],
+                [0.7-0.01, 0.8-0.01, 0.0]])
 
 M_C = np.array([[0.2, 0.2, 0.0],
                 [0.2, 0.6, 0.0],
@@ -25,7 +25,7 @@ M_C = np.array([[0.2, 0.2, 0.0],
                 [0.5, 0.6, 0.0]])
 
 POINT_N = 4
-wheelbase = 5.175
+wheelbase = 5.0
 # user setting
 init_yaw = 0.0  # math.radians(0)   # radians
 init_p = [0.0, 0.0, 0.0] # position[x,y,z]
@@ -37,10 +37,10 @@ class Lidar_FrontMarker_0:
         self.init_angle_h = [0,0,0]
         self.init_angle_v = [0,0,0]
         self.init_position = [wheelbase,0.0,0.0]     # 车体坐标系 全站仪和后轴中心点位置偏差: x,y,z
-        self.position = [[4.8602, 2.9775, 2.7821],
-                        [5.3424, 2.4697, 2.7804],
-                        [4.8588, 2.9772, 2.4818],
-                        [5.3418, 2.4699, 2.4803]]   #  x>0 y>0 z>0
+        self.position = [[3.6062,1.9880,2.0103],
+                        [3.8425,1.2447,2.0066],
+                        [3.5976,1.9919,1.3309],
+                        [3.8331,1.2504,1.3277]]   #  x>0 y>0 z>0
             
     def markerpostion(self):
         print("------------------- ", self.name, " -----------------")
@@ -101,6 +101,6 @@ print("B_o: \n", B_o)
     
 # print("B_i: \n", B_i)
 
-# m0.plotf(ret, B_o)
+m0.plotf(ret, B_o)
 # m0.plotf(M_I, M_C)
 

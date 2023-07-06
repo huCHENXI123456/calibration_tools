@@ -8,8 +8,12 @@ import marker_process as m_p
 # car axis x: car rear, y: car right 
 # point position
 wheel_len = 5
-left_struct = [-3.972+wheel_len,0.515,0]    # 对应p3
-right_struct = [-3.972+wheel_len,-0.515, 0]  # 对应p4
+# # 1801
+# left_struct = [-3.972+wheel_len,0.515,0]    # 对应p3
+# right_struct = [-3.972+wheel_len,-0.515, 0]  # 对应p4
+# 2501
+left_struct = [-4.036+wheel_len,0.52,0]    # 对应p3
+right_struct = [-4.036+wheel_len,-0.52, 0]  # 对应p4
 
 
 # 参数分别是旋转轴和旋转弧度值
@@ -96,8 +100,19 @@ def computer_1(pl, pr):
     
 if __name__ == '__main__':   
     #1801-5   
-    p3 = [-3.9852+wheel_len,0.4816,0]
-    p4 = [-4.0142+wheel_len,-0.5323,0]  
+    # p3 = [-3.9852+wheel_len,0.4816,0]
+    # p4 = [-4.0142+wheel_len,-0.5323,0]  
+    # #b_002
+    # p3 = [-4.0178+wheel_len,0.4168,0]
+    # p4 = [-4.0129+wheel_len,-0.6071,0] 
+
+    #b_004-0630
+    # p3 = [-4.0199+wheel_len,0.5578,0]
+    # p4 = [-4.0465+wheel_len,-0.4660,0] 
+
+    #1801-3  -0630
+    p3 = [-4.0203+wheel_len,0.6014,0]
+    p4 = [-4.0324+wheel_len,-0.4157,0] 
     # computer(p1, p2, p3, p4)
     x,y,yaw = computer_1(p3, p4)
     if True:

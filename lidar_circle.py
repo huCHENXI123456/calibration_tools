@@ -75,22 +75,22 @@ class Lidar_FrontMarker_0:
         plt.show()
                     
 m0 = Lidar_FrontMarker_0()   # P1
-ret = m0.markerpostion()
+ret = m0.markerpostion()    # 获取标定板上焦点的位置
 
 print("ret: \n", ret)
-B_s = np.array(ret)
-T, R, t = m_p.computer_translate(M_I, B_s)
+B_s = np.array(ret)     #将焦点位置转换为数组
+T, R, t = m_p.computer_translate(M_I, B_s)  # 计算标定板坐标系到车体坐标系的变换矩阵
 
-print("R: \n", R)
-print("t: \n", t)
+print("R: \n", R)   #旋转矩阵R
+print("t: \n", t)   #平移向量t
 
 B_o = []
 for i in range(len(M_C)) :
-    B_C = np.dot(R, M_C[i].T)
-    B_C = B_C + t
+    B_C = np.dot(R, M_C[i].T)   # 计算标定板上点M_C的车体坐标系下的坐标
+    B_C = B_C + t       # 对计算出的坐标进行平移
     B_o.append(B_C)
     
-print("B_o: \n", B_o)
+print("B_o: \n", B_o)   
 
 
 # B_i = []

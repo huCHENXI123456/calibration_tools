@@ -26,13 +26,13 @@ POINT_N = 4
 
 # 0519,此站用于c+01,n06-3,n09,n10,n13,n16,n08,n17
 
-CAR_ID = "tianjin"
+CAR_ID = "B_004"
 MARKER_TYPE = 2   # 0: 8, 1: 10, 2: all
-wheelbase = 5.175
+wheelbase = 5
 # user setting
 init_yaw = 0.0  # math.radians(0)   # radians, left is negative, -0.1,-0.3,-0.5,-0.8
 init_p = [0.0, 0.0, 0.0] # position[x,y,z]
-station_id = 0 # default: 0
+station_id = 4 # default: 0
 ###########################################
 #################### FRONT ####################
 class FrontMarker_0:

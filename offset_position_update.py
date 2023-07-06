@@ -3,12 +3,13 @@ import math
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 import scipy.linalg as linalg
+import marker_process as m_p
 
 # car axis x: car rear, y: car right 
 # point position
-wheel_len = 5.175
-left_struct = [-4.036+wheel_len,0.52,0]    # 对应p3
-right_struct = [-4.036+wheel_len,-0.52, 0]  # 对应p4
+wheel_len = 5
+left_struct = [-3.972+wheel_len,0.515,0]    # 对应p3
+right_struct = [-3.972+wheel_len,-0.515, 0]  # 对应p4
 
 
 # 参数分别是旋转轴和旋转弧度值
@@ -56,6 +57,10 @@ def computer_1(pl, pr):
     pstruct_l = pstruct_l_rot + t_s_m
     pstruct_r = pstruct_r_rot + t_s_m
 
+    #
+    R_z_set = m_p.convert_rotation(-yaw, 0, 0)
+    y1_c, p1_c, r1_c = m_p.convert_eular(R_z_set)
+                
     print("-"*60)
     print("-"*60)
     print("left point structure: ", left_struct)
@@ -79,6 +84,8 @@ def computer_1(pl, pr):
     print("-"*60)
     print("This is used for cpp calibration...")
     print(">>> The result structure to messure yaw: ", -yaw, ",translate: ", t_s_m)
+    # print(">>> The result of rotation: \n", R_z_set)
+    # print(">>> The verify yaw: ", y1_c, ",pitch: ", p1_c, ",roll: ", r1_c)
     print("-"*60)
     print("This is used for update stations calibration...")
     print(">>> If yaw is positive, mean stations yaw is growing")    
@@ -88,9 +95,9 @@ def computer_1(pl, pr):
     return t_s_m[0], t_s_m[1], -yaw
     
 if __name__ == '__main__':   
-    #b_002
-    p3 = [-4.0178+wheel_len,0.4168,0]
-    p4 = [-4.0129+wheel_len,-0.6071,0]  
+    #1801-5   
+    p3 = [-3.9852+wheel_len,0.4816,0]
+    p4 = [-4.0142+wheel_len,-0.5323,0]  
     # computer(p1, p2, p3, p4)
     x,y,yaw = computer_1(p3, p4)
     if True:

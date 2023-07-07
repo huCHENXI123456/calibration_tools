@@ -8,12 +8,12 @@ import marker_process as m_p
 # car axis x: car rear, y: car right 
 # point position
 wheel_len = 5
-# # 1801
-# left_struct = [-3.972+wheel_len,0.515,0]    # 对应p3
-# right_struct = [-3.972+wheel_len,-0.515, 0]  # 对应p4
-# 2501
-left_struct = [-4.036+wheel_len,0.52,0]    # 对应p3
-right_struct = [-4.036+wheel_len,-0.52, 0]  # 对应p4
+# 1801
+left_struct = [-3.972+wheel_len,0.515,0]    # 对应p3
+right_struct = [-3.972+wheel_len,-0.515, 0]  # 对应p4
+# # 2501
+# left_struct = [-4.036+wheel_len,0.52,0]    # 对应p3
+# right_struct = [-4.036+wheel_len,-0.52, 0]  # 对应p4
 
 
 # 参数分别是旋转轴和旋转弧度值
@@ -88,8 +88,8 @@ def computer_1(pl, pr):
     print("-"*60)
     print("This is used for cpp calibration...")
     print(">>> The result structure to messure yaw: ", -yaw, ",translate: ", t_s_m)
-    # print(">>> The result of rotation: \n", R_z_set)
-    # print(">>> The verify yaw: ", y1_c, ",pitch: ", p1_c, ",roll: ", r1_c)
+    print(">>> The result of rotation: \n", R_z_set)
+    print(">>> The verify yaw: ", y1_c, ",pitch: ", p1_c, ",roll: ", r1_c)
     print("-"*60)
     print("This is used for update stations calibration...")
     print(">>> If yaw is positive, mean stations yaw is growing")    
@@ -110,9 +110,9 @@ if __name__ == '__main__':
     # p3 = [-4.0199+wheel_len,0.5578,0]
     # p4 = [-4.0465+wheel_len,-0.4660,0] 
 
-    #1801-3  -0630
-    p3 = [-4.0203+wheel_len,0.6014,0]
-    p4 = [-4.0324+wheel_len,-0.4157,0] 
+    # #1801-3
+    p3 = [-3.998+wheel_len,0.4784,0]
+    p4 = [-4.0144+wheel_len,-0.5442,0] 
     # computer(p1, p2, p3, p4)
     x,y,yaw = computer_1(p3, p4)
     if True:

@@ -26,9 +26,14 @@ POINT_N = 4
 
 # 0519,此站用于c+01,n06-3,n09,n10,n13,n16,n08,n17
 
+# CAR_ID = "1801"
+# wheelbase = 5
+
 CAR_ID = "2501"
-MARKER_TYPE = 2   # 0: 8, 1: 10, 2: all
 wheelbase = 5.175
+
+MARKER_TYPE = 2   # 0: 8, 1: 10, 2: all
+
 # user setting
 init_yaw = 0.0  # math.radians(0)   # radians, left is negative, -0.1,-0.3,-0.5,-0.8
 init_p = [0.0, 0.0, 0.0] # position[x,y,z]

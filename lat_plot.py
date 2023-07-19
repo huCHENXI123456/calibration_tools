@@ -37,7 +37,7 @@ def process(path, id):
     curvature_data = data.loc[:, 'current_curvature']
     heading_data = data.loc[:, 'current_heading_error']
     lateral_data = data.loc[:, 'current_lateral_error']
-    print(len(lateral_data))
+    print("lateral data length: ", len(lateral_data))
     plt.figure(1)
     
     plt.sca(plt.subplot(3, 1, 1))

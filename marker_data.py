@@ -32,7 +32,7 @@ wheelbase = 5.175
 # user setting
 init_yaw = 0.0  # math.radians(0)   # radians, left is negative, -0.1,-0.3,-0.5,-0.8
 init_p = [0.0, 0.0, 0.0] # position[x,y,z]
-station_id = 4 # default: 0
+station_id = 0 # default: 0
 ###########################################
 #################### FRONT ####################
 class FrontMarker_0:

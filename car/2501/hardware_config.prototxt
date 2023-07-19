@@ -2,7 +2,7 @@ sensor_config {
   car_id: "WM_W6_design1"
   car_plate: "0"
   vehicle_param {
-    wheelbase: 5
+    wheelbase: 5.175
     wheeltrackF: 2.09
     wheeltrackR: 1.97
     overhangF: 1.515

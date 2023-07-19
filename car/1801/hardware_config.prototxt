@@ -1,0 +1,888 @@
+sensor_config {
+  car_id: "WM_W6_design1"
+  car_plate: "0"
+  vehicle_param {
+    wheelbase: 5
+    wheeltrackF: 2.09
+    wheeltrackR: 1.97
+    overhangF: 1.515
+    overhangR: 1.425
+    wheeldiameter: 1.054
+    wheelwidth: 0.3
+    overalllength: 8.918
+    overallwidth: 2.5
+    overallhigh: 3.35
+    minturningradius: 9.7
+    maxgradeability: 20
+    max_steering_angle: 900
+    steer_transmission_ratio: 24.85
+    vehicle_left_top_high_x: 3.628
+    vehicle_left_top_high_y: 0.544
+    vehicle_left_top_low_x: 3.228
+    vehicle_left_top_low_y: 0.9235
+    vehicle_left_bottom_high_x: -0.59
+    vehicle_left_bottom_high_y: 0.9235
+    vehicle_left_bottom_low_x: -0.948
+    vehicle_left_bottom_low_y: 0.744
+    rearview_mirror_length: 0.22
+    rearview_mirror_width: 0.09
+    rearview_mirror_upper_height: 0
+    rearview_mirror_lower_height: 0
+    rearview_mirror_to_rear: 2.1
+    wheel_pulse_counter_num_F: 0
+    wheel_pulse_counter_num_R: 0
+    is_wheel_pulse_counter_signed_F: false
+    is_wheel_pulse_counter_signed_R: false
+    wheel_pulse_counter_min_F: 0
+    wheel_pulse_counter_min_R: 0
+    wheel_pulse_counter_max_F: 0
+    wheel_pulse_counter_max_R: 0
+    tyre_model_F: "0"
+    tyre_model_R: "0"
+    overall_mass: 11446
+    canbus_delay_time: 0.4
+    max_acceleration: 2
+    max_deceleration: -5
+    max_steerangle_rate: 400
+    cornering_stiffnessF: 155494
+    cornering_stiffnessR: 155494
+    massF: 5723
+    massR: 5723
+    frontwheel2COM: 1.72
+    rearwheel2COM: 2.78
+    max_abs_speed_when_stopped: 0.2
+    front_edge_to_center: 4.459
+    back_edge_to_center: 4.459
+    left_edge_to_center: 1.25
+    right_edge_to_center: 1.25
+    steering_bias: 0
+    heading_error_bias: 0
+  }
+  cam_param {
+    name: front_wide_camera
+    xi: 0
+    fx: 1010.50378
+    fy: 1010.2077
+    cx: 951.180298
+    cy: 538.852234
+    distortion: -0.0605504401
+    distortion: -0.00806848146
+    distortion: -0.000492064049
+    distortion: 0
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: -1.57079601
+      pitch: 0
+      roll: -1.57079601
+    }
+    translation {
+      x: 5.10399294
+      y: -0.005
+      z: 2.75334096
+    }
+    camera_model: EQUIDISTANT
+    port: 4
+    orientation: FRONT
+    board: "slave"
+  }
+  cam_param {
+    name: left_front_camera
+    xi: 0
+    fx: 1009.19904
+    fy: 1008.99255
+    cx: 963.594
+    cy: 541.006531
+    distortion: -0.0604395196
+    distortion: -0.00878436211
+    distortion: -0.000209275138
+    distortion: 0
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: -0.349
+      pitch: 0
+      roll: -1.9373
+    }
+    translation {
+      x: 4.35038662
+      y: 1.17347395
+      z: 2.93109798
+    }
+    camera_model: EQUIDISTANT
+    port: 0
+    orientation: LEFT_FORWARD
+    board: "slave"
+  }
+  cam_param {
+    name: right_front_camera
+    xi: 0
+    fx: 1008.80243
+    fy: 1008.71985
+    cx: 960.78418
+    cy: 548.581055
+    distortion: -0.0597376823
+    distortion: -0.00888517685
+    distortion: -0.000208167927
+    distortion: 0
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: -2.7925
+      pitch: -0
+      roll: -1.9373
+    }
+    translation {
+      x: 4.35038662
+      y: -1.17347395
+      z: 2.93109798
+    }
+    camera_model: EQUIDISTANT
+    port: 2
+    orientation: RIGHT_FORWARD
+    board: "slave"
+  }
+  cam_param {
+    name: front_long_camera
+    xi: 0
+    fx: 3879.65479
+    fy: 3879.65479
+    cx: 965.882812
+    cy: 543.028625
+    distortion: -0.132540509
+    distortion: 0
+    distortion: 0.000231313912
+    distortion: -0.00123038318
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: -1.57079601
+      pitch: 0
+      roll: -1.57079601
+    }
+    translation {
+      x: 5.10659695
+      y: -0.04
+      z: 2.75334096
+    }
+    camera_model: PINHOLE
+    port: 5
+    orientation: FRONT
+    board: "slave"
+  }
+  cam_param {
+    name: front_middle_camera
+    xi: 0
+    fx: 1838.53796
+    fy: 1838.21533
+    cx: 966.418945
+    cy: 535.873657
+    distortion: -0.378113717
+    distortion: 0.143016428
+    distortion: -0.000165088073
+    distortion: 0.000104116567
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: -1.57079601
+      pitch: 0
+      roll: -1.57079601
+    }
+    translation {
+      x: 5.10663891
+      y: 0.03
+      z: 2.75334096
+    }
+    camera_model: PINHOLE
+    port: 6
+    orientation: FRONT
+    board: "slave"
+  }
+  cam_param {
+    name: left_rear_camera
+    xi: 0
+    fx: 1309.82764
+    fy: 1309.68542
+    cx: 960.412964
+    cy: 541.514648
+    distortion: -0.352172017
+    distortion: 0.160631
+    distortion: 5.34274886e-06
+    distortion: 4.37248964e-05
+    distortion: -0.0418420322
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: 0.97738
+      pitch: 0
+      roll: -1.67377
+    }
+    translation {
+      x: 5.16574383
+      y: 1.33355403
+      z: 2.02188492
+    }
+    camera_model: PINHOLE
+    port: 3
+    orientation: LEFT_BACKWARD
+    board: "slave"
+  }
+  cam_param {
+    name: right_rear_camera
+    xi: 0
+    fx: 1309.36853
+    fy: 1309.12109
+    cx: 955.808594
+    cy: 537.878174
+    distortion: -0.354303837
+    distortion: 0.163330629
+    distortion: -4.00399185e-05
+    distortion: -1.15133871e-05
+    distortion: -0.0427947193
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: 2.1642
+      pitch: 0
+      roll: -1.67377
+    }
+    translation {
+      x: 5.16574383
+      y: -1.33355403
+      z: 2.02188492
+    }
+    camera_model: PINHOLE
+    port: 1
+    orientation: RIGHT_BACKWARD
+    board: "slave"
+  }
+  cam_param {
+    name: rear_middle_camera
+    xi: 0
+    fx: 1822.07
+    fy: 1821.48
+    cx: 958.867
+    cy: 529.981
+    distortion: -0.367585
+    distortion: 0.03125
+    distortion: 0
+    distortion: 0
+    distortion: 0
+    image_width: 1920
+    image_height: 1080
+    image_format: UYUV
+    rotation {
+      yaw: 1.57079625
+      pitch: 0
+      roll: -1.61184645
+    }
+    translation {
+      x: -0.744900167
+      y: -0.026
+      z: 1.4796
+    }
+    camera_model: PINHOLE
+    orientation: REAR
+  }
+  cam_param {
+    name: front_short_camera
+    xi: 1.2104
+    fx: 625.243
+    fy: 624.841
+    cx: 636.184
+    cy: 360.018
+    distortion: 0.422999
+    distortion: -0.3394
+    distortion: 2.06561e-06
+    distortion: -0.00213051
+    image_width: 1280
+    image_height: 720
+    image_format: RGBA
+    rotation {
+      yaw: -1.57079601
+      pitch: 0
+      roll: -2.15199089
+    }
+    translation {
+      x: 6.26709795
+      y: 0
+      z: 1.05135
+    }
+    camera_model: MEI
+    port: 1
+    orientation: FRONT
+    board: "master"
+  }
+  cam_param {
+    name: left_short_camera
+    xi: 1.20752
+    fx: 624.657
+    fy: 624.347
+    cx: 639.073
+    cy: 360.591
+    distortion: 0.428041
+    distortion: -0.342908
+    distortion: -0.000611788
+    distortion: -0.000875935
+    image_width: 1280
+    image_height: 720
+    image_format: RGBA
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: -2.21656823
+    }
+    translation {
+      x: 5.24120903
+      y: 1.32984495
+      z: 1.98146701
+    }
+    camera_model: MEI
+    port: 0
+    orientation: LEFT
+    board: "master"
+  }
+  cam_param {
+    name: right_short_camera
+    xi: 1.21822
+    fx: 626.434
+    fy: 626.272
+    cx: 638.681
+    cy: 359.729
+    distortion: 0.440023
+    distortion: -0.355991
+    distortion: -0.000512651
+    distortion: 0.00277598
+    image_width: 1280
+    image_height: 720
+    image_format: RGBA
+    rotation {
+      yaw: 3.1415925
+      pitch: 0
+      roll: -2.21656823
+    }
+    translation {
+      x: 5.24120903
+      y: -1.32984495
+      z: 1.98146701
+    }
+    camera_model: MEI
+    port: 2
+    orientation: RIGHT
+    board: "master"
+  }
+  cam_param {
+    name: rear_short_camera
+    xi: 1.20772
+    fx: 625.608
+    fy: 625.692
+    cx: 639.995
+    cy: 360.175
+    distortion: 0.42643
+    distortion: -0.337266
+    distortion: 0.000185346
+    distortion: 0.00152188
+    image_width: 1280
+    image_height: 720
+    image_format: RGBA
+    rotation {
+      yaw: 1.57079625
+      pitch: 0
+      roll: -2.00712872
+    }
+    translation {
+      x: -1.0860002
+      y: 0.0506
+      z: 0.9558
+    }
+    camera_model: MEI
+    orientation: REAR
+  }
+  radar_param {
+    name: front_radar
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    translation {
+      x: 6.13115
+      y: 0
+      z: 0.61967
+    }
+    radar_type: LONG_RANGE_RADAR
+    orientation: FRONT
+  }
+  radar_param {
+    name: leftfront_radar
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    translation {
+      x: 6.13115
+      y: 0
+      z: 0.61967
+    }
+    radar_type: SHORT_RANGE_RADAR
+    orientation: LEFT_FORWARD
+  }
+  radar_param {
+    name: leftrear_radar
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    translation {
+      x: 6.13115
+      y: 0
+      z: 0.61967
+    }
+    radar_type: SHORT_RANGE_RADAR
+    orientation: LEFT_BACKWARD
+  }
+  radar_param {
+    name: rightrear_radar
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    translation {
+      x: 6.13115
+      y: 0
+      z: 0.61967
+    }
+    radar_type: SHORT_RANGE_RADAR
+    orientation: RIGHT_BACKWARD
+  }
+  radar_param {
+    name: rightfront_radar
+    rotation {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    translation {
+      x: 6.13115
+      y: 0
+      z: 0.61967
+    }
+    radar_type: SHORT_RANGE_RADAR
+    orientation: RIGHT_FORWARD
+  }
+  imu_param {
+    model: "hi219"
+    frequency: 100
+    status: 0
+    gyro_offset {
+      x: 0
+      y: 0
+      z: 0
+    }
+    accel_offset {
+      x: 0
+      y: 0
+      z: 0
+    }
+    euler_offset {
+      yaw: 0
+      pitch: 0
+      roll: 0
+    }
+    accel_misalignment {
+      m00: 1
+      m01: 0
+      m02: 0
+      m10: 0
+      m11: 1
+      m12: 0
+      m20: 0
+      m21: 0
+      m22: 1
+    }
+    gyro_misalignment {
+      m00: 1
+      m01: 0
+      m02: 0
+      m10: 0
+      m11: 1
+      m12: 0
+      m20: 0
+      m21: 0
+      m22: 1
+    }
+    accel_scale {
+      m00: 1
+      m01: 0
+      m02: 0
+      m10: 0
+      m11: 1
+      m12: 0
+      m20: 0
+      m21: 0
+      m22: 1
+    }
+    gyro_scale {
+      m00: 1
+      m01: 0
+      m02: 0
+      m10: 0
+      m11: 1
+      m12: 0
+      m20: 0
+      m21: 0
+      m22: 1
+    }
+    rotation_imu2vehicle {
+      yaw: 1.57079637
+      pitch: 0
+      roll: 0
+    }
+    translation_imu2vehicle {
+      x: 5.462
+      y: -0.0076
+      z: 1.4349
+    }
+  }
+  ultrasonic_param {
+    sensor_pos: 1
+    translation {
+      x: 3.1687
+      y: -0.8795
+      z: 0.5246
+    }
+    rotation {
+      yaw: -1.39277
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 1.047
+      range_alpha: 4.51
+      beta: 0
+      range_beta: 0
+      min_range: 0.3
+      max_range: 4.5
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: APA
+    lin_id: 6
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 2
+    translation {
+      x: 3.4088
+      y: -0.6594
+      z: 0.5587
+    }
+    rotation {
+      yaw: -0.715585
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 1
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 3
+    translation {
+      x: 3.5783
+      y: -0.3134
+      z: 0.6436
+    }
+    rotation {
+      yaw: -0.1309
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 2
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 4
+    translation {
+      x: 3.5783
+      y: 0.3134
+      z: 0.6436
+    }
+    rotation {
+      yaw: 0.1309
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 3
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 5
+    translation {
+      x: 3.4088
+      y: 0.6594
+      z: 0.5587
+    }
+    rotation {
+      yaw: 0.715585
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 4
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 6
+    translation {
+      x: 3.1687
+      y: 0.8795
+      z: 0.5246
+    }
+    rotation {
+      yaw: 1.39277303
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 1.047
+      range_alpha: 4.51
+      beta: 0
+      range_beta: 0
+      min_range: 0.3
+      max_range: 4.5
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: APA
+    lin_id: 5
+    group_id: 0
+  }
+  ultrasonic_param {
+    sensor_pos: 7
+    translation {
+      x: -0.5623
+      y: 0.8505
+      z: 0.557
+    }
+    rotation {
+      yaw: 1.84132
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 1.047
+      range_alpha: 4.51
+      beta: 0
+      range_beta: 0
+      min_range: 0.3
+      max_range: 4.5
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: APA
+    lin_id: 5
+    group_id: 1
+  }
+  ultrasonic_param {
+    sensor_pos: 8
+    translation {
+      x: -0.8698
+      y: 0.6527
+      z: 0.5234
+    }
+    rotation {
+      yaw: 2.90074
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 4
+    group_id: 1
+  }
+  ultrasonic_param {
+    sensor_pos: 9
+    translation {
+      x: -0.9388
+      y: 0.2346
+      z: 0.5559
+    }
+    rotation {
+      yaw: 3.08051
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 3
+    group_id: 1
+  }
+  ultrasonic_param {
+    sensor_pos: 10
+    translation {
+      x: -0.9388
+      y: -0.2346
+      z: 0.5559
+    }
+    rotation {
+      yaw: -3.08051
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 2
+    group_id: 1
+  }
+  ultrasonic_param {
+    sensor_pos: 11
+    translation {
+      x: -0.8698
+      y: -0.6527
+      z: 0.5234
+    }
+    rotation {
+      yaw: -2.90074
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 2.094
+      range_alpha: 1
+      beta: 1.047
+      range_beta: 2.396
+      min_range: 0.3
+      max_range: 3.3
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: UPA
+    lin_id: 1
+    group_id: 1
+  }
+  ultrasonic_param {
+    sensor_pos: 12
+    translation {
+      x: -0.5623
+      y: -0.8505
+      z: 0.557
+    }
+    rotation {
+      yaw: -1.84132
+      pitch: 0
+      roll: 0
+    }
+    fov {
+      alpha: 1.047
+      range_alpha: 4.51
+      beta: 0
+      range_beta: 0
+      min_range: 0.3
+      max_range: 4.5
+      vertical_fov: 1.047
+    }
+    ultrasonic_function_type: APA
+    lin_id: 6
+    group_id: 1
+  }
+  gnss_leverarm_param {
+    primary {
+      offset {
+        x: 3.7723
+        y: 0.1825
+        z: 3.9051
+      }
+      uncertainty {
+        x: 0.01
+        y: 0.01
+        z: 0.01
+      }
+    }
+    secondary {
+      offset {
+        x: 0.55
+        y: 0.875
+        z: 1.054
+      }
+      uncertainty {
+        x: 0.01
+        y: 0.01
+        z: 0.01
+      }
+    }
+  }
+}

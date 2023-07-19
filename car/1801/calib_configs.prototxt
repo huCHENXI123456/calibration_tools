@@ -35,12 +35,12 @@ design_point_r {
     z:0
 }
 measure_point_l {
-    x:0
-    y:0
+    x:-3.9689
+    y:0.5089
     z:0
 }
 measure_point_r {
-    x:0
-    y:0
+    x:3.9932
+    y:-0.5145
     z:0
 }

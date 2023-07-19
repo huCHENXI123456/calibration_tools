@@ -26,9 +26,9 @@ POINT_N = 4
 
 # 0519,此站用于c+01,n06-3,n09,n10,n13,n16,n08,n17
 
-CAR_ID = "B_004"
+CAR_ID = "2501"
 MARKER_TYPE = 2   # 0: 8, 1: 10, 2: all
-wheelbase = 5
+wheelbase = 5.175
 # user setting
 init_yaw = 0.0  # math.radians(0)   # radians, left is negative, -0.1,-0.3,-0.5,-0.8
 init_p = [0.0, 0.0, 0.0] # position[x,y,z]
@@ -86,7 +86,7 @@ class LeftMarker_F0:
             self.init_angle_h = [0,0,0]
             self.init_angle_v = [0,0,0]
             self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
-            self.position = [[-0.1515,-3.5632,2.3891],
+            self.position = [[-0.1515,3.5632,2.3891],
                              [0.5334,3.4153,2.3893],
                              [-0.1496,3.5695,2.0886],
                              [0.5351,3.4220,2.0889]]   #  x>0 y>0 z>0

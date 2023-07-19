@@ -73,7 +73,7 @@ if __name__ == '__main__':
     print(">>>>>>>>>>>>> CAR ID: ", m_c.CAR_ID)
     ret = []
     ###########################################
-    file_name = 'anp_station_tianjin.prototxt'
+    file_name = "anp_station_tianjin_" + m_c.CAR_ID + '.prototxt'
     # Marker of station, adjust the number of marker class
     # step 1: define class
     m0 = m_c.FrontMarker_0()   # P1
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     if False: 
         plota(ret[8], m8.name)
         plota(ret[9], m9.name)
-    if True:
+    if False:
         plota(ret[10], m10.name)
         plota(ret[11], m11.name)
         plota(ret[12], m12.name)

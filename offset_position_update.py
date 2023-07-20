@@ -111,8 +111,8 @@ if __name__ == '__main__':
     # p4 = [-4.0465+wheel_len,-0.4660,0] 
 
     # #1801-3
-    p3 = [-3.998+wheel_len,0.4784,0]
-    p4 = [-4.0144+wheel_len,-0.5442,0] 
+    p3 = [-3.9689+wheel_len,0.5089,0]
+    p4 = [-3.9932+wheel_len,-0.5145,0] 
     # computer(p1, p2, p3, p4)
     x,y,yaw = computer_1(p3, p4)
     if True:

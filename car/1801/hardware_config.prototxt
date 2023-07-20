@@ -2,7 +2,7 @@ sensor_config {
   car_id: "WM_W6_design1"
   car_plate: "0"
   vehicle_param {
-    wheelbase: 5
+    wheelbase: 5.0
     wheeltrackF: 2.09
     wheeltrackR: 1.97
     overhangF: 1.515
@@ -862,7 +862,7 @@ sensor_config {
   gnss_leverarm_param {
     primary {
       offset {
-        x: 3.7723
+        x: 3.5973
         y: 0.1825
         z: 3.9051
       }

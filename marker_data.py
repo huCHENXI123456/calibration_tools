@@ -207,3 +207,28 @@ class RightFishMarker_R1:
                              [0.4437,-1.7576,0.0074],
                              [-0.2579,-1.7533,0.0002]]   #  x>0 y>0 z>0  
                                                      
+
+
+#################### LIDAR #################### 
+class FrontLidarMarker_L:
+      def __init__(self):
+            self.name = "lidar_marker_l"
+            self.init_angle_h = [0,0,0]
+            self.init_angle_v = [0,0,0]
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
+            self.position = [[3.6113,1.9886,2.0117],
+                             [3.8421,1.2432,2.0081],
+                             [3.6020,1.9927,1.3322],
+                             [3.8326,1.2491,1.3292]]   #  x>0 y>0 z>0  
+
+class FrontLidarMarker_R:
+      def __init__(self):
+            self.name = "lidar_marker_r"
+            self.init_angle_h = [0,0,0]
+            self.init_angle_v = [0,0,0]
+            self.init_position = [wheelbase,0.0,0.0]     # 全站仪和后轴中心点位置偏差: x,y,z
+            self.position = [[3.8728,-1.2213,1.9928],
+                             [3.5606,-1.9360,2.0029],
+                             [3.8780,-1.23351.3127],
+                             [3.5646,-1.9472,1.3233]]   #  x>0 y>0 z>0  
+

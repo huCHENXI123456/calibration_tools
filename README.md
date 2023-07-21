@@ -13,3 +13,8 @@ scp *.prototxt root@172.16.1.32:/opt/data/deepway/calibration/output/latest/ANP/
 
 ## lane verify
 .s3.sh
+
+
+
+## Git
+git push origin1 calibration

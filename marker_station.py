@@ -79,7 +79,12 @@ def save_station(ret, file_name, station_id):
             if i == 14:
                 f.write("\tname: " + "\"" + "F5" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "F5" + "\"" + "\n")  
-                                                                
+            if i == 15:
+                f.write("\tname: " + "\"" + "LL" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "LL" + "\"" + "\n") 
+            if i == 16:
+                f.write("\tname: " + "\"" + "LR" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "LR" + "\"" + "\n")                                                                                 
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")
             f.writelines("\t\tframe_id: "+"\"world\"" + "\n")
@@ -133,12 +138,15 @@ def save_station(ret, file_name, station_id):
                 f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
             if i == 14:      # The  marker
                 f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
-                                                                                            
+            if i == 15 or i == 16:      # The  marker
+                f.writelines("\tobservers: FRONT_LIDAR " + "\n")
+                                                                                                            
             f.writelines("\tused: true"+"\n")
-            f.writelines(
-                "\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")
-            f.writelines(
-                "\troi { \n\t\tauto_roi: true \n\t\tscale: 2.0" + "\n")
+            if i < 15:
+                f.writelines("\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")
+            else:
+                f.writelines("\tdata:" + "\"rows: 2\\ncols: 2\\nsquare_size: 0.20\\ninner_only: true\\n\"" + "\n")
+            f.writelines("\troi { \n\t\tauto_roi: true \n\t\tscale: 2.0" + "\n")
             f.writelines("\t} \n")
             f.writelines("\trefinement: true" + "\n")
             f.writelines("\tsolve_pose: true" + "\n")

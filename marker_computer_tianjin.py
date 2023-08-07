@@ -93,6 +93,9 @@ if __name__ == '__main__':
     m12 = m_c.LeftFishMarker_L1()       # F3
     m13 = m_c.RightFishMarker_R0()      # F4
     m14 = m_c.RightFishMarker_R1()      # F5
+    # add lidar
+    m15 = m_c.FrontLidarMarker_L()
+    m16 = m_c.FrontLidarMarker_R()
 
     
     # new station
@@ -112,7 +115,9 @@ if __name__ == '__main__':
     ret.append(markerpostion(m12)) 
     ret.append(markerpostion(m13)) 
     ret.append(markerpostion(m14)) 
-        
+    ret.append(markerpostion(m15)) 
+    ret.append(markerpostion(m16)) 
+            
     if True:
         plota(ret[0], m0.name)
         plota(ret[1], m1.name)
@@ -131,7 +136,9 @@ if __name__ == '__main__':
         plota(ret[12], m12.name)
         plota(ret[13], m13.name)
         plota(ret[14], m14.name)                      
-
+    if True:
+        plota(ret[15], m15.name)
+        plota(ret[16], m16.name)        
 
     print("#"*60)
     if False:

@@ -28,26 +28,6 @@ def plota(p, name):
     ax.set_zlabel('Z Axes')
     plt.show()
 
-# 绘制四个角点
-def plotf(p1,p2,p3,p4):
-    #3D Plotting
-    fig = plt.figure()
-    ax = plt.axes(projection="3d")
-    ax.scatter(p1[0],p1[1],p1[2],color='b')
-    ax.scatter(p2[0],p2[1],p2[2],color='g')
-    ax.scatter(p3[0],p3[1],p3[2],color='r')
-    ax.scatter(p4[0],p4[1],p4[2],color='y')
-    #Labeling
-    ax.set_xlabel('X Axes')
-    ax.set_ylabel('Y Axes')
-    ax.set_zlabel('Z Axes')
-    plt.show()
-
-def deg2rad(d):
-    deg = d[0] + d[1]/60.0 + d[2]/3600.0
-    # print("deg: ", deg)
-    return math.radians(deg)    #2*math.pi
-
 def norm_2(p1,p2):
     dist = np.sqrt(pow((p1[0]-p2[0]),2) + pow((p1[1]-p2[1]),2) + pow((p1[2]-p2[2]),2))
     return dist
@@ -84,22 +64,24 @@ if __name__ == '__main__':
     m5 = m_c.LeftMarker_R0()   # P6 
     m6 = m_c.RightMarker_F0()  # P7 
     m7 = m_c.RightMarker_R0()  # P8 
-    # # add rear
+    # # add middle marker
     m8 = m_c.LeftMarker_M0()   # P9
     m9 = m_c.RightMarker_M0()  # P10 
     # add fisheye
-    m10 = m_c.FrontFishMarker_F0()      # F1
-    m11 = m_c.LeftFishMarker_L0()       # F2
-    m12 = m_c.LeftFishMarker_L1()       # F3
-    m13 = m_c.RightFishMarker_R0()      # F4
-    m14 = m_c.RightFishMarker_R1()      # F5
+    m10 = m_c.FrontFishMarker_F0()  # F1
+    m11 = m_c.LeftFishMarker_L0()   # F2
+    m12 = m_c.LeftFishMarker_L1()   # F3
+    m13 = m_c.RightFishMarker_R0()  # F4
+    m14 = m_c.RightFishMarker_R1()  # F5
     # add lidar
-    m15 = m_c.FrontLidarMarker_L()
-    m16 = m_c.FrontLidarMarker_R()
+    m15 = m_c.FrontLidarMarker_L()  #L0
+    m16 = m_c.FrontLidarMarker_R()  #L1
+    m17 = m_c.LeftLidarMarker_F0()  #L2
+    m18 = m_c.LeftLidarMarker_R0()  #L3
+    m19 = m_c.RightLidarMarker_F0() #L4
+    m20 = m_c.RightLidarMarker_R0() #L5
 
-    
     # new station
-
     ret.append(markerpostion(m0))    
     ret.append(markerpostion(m1))
     ret.append(markerpostion(m2))
@@ -117,8 +99,12 @@ if __name__ == '__main__':
     ret.append(markerpostion(m14)) 
     ret.append(markerpostion(m15)) 
     ret.append(markerpostion(m16)) 
-            
-    if True:
+    ret.append(markerpostion(m17))
+    ret.append(markerpostion(m18))
+    ret.append(markerpostion(m19))
+    ret.append(markerpostion(m20))
+
+    if False:
         plota(ret[0], m0.name)
         plota(ret[1], m1.name)
         plota(ret[2], m2.name)
@@ -136,9 +122,13 @@ if __name__ == '__main__':
         plota(ret[12], m12.name)
         plota(ret[13], m13.name)
         plota(ret[14], m14.name)                      
-    if True:
+    if False:
         plota(ret[15], m15.name)
-        plota(ret[16], m16.name)        
+        plota(ret[16], m16.name)
+        plota(ret[17], m16.name)
+        plota(ret[18], m16.name)
+        plota(ret[19], m16.name)
+        plota(ret[20], m16.name)   
 
     print("#"*60)
     if False:
@@ -152,5 +142,3 @@ if __name__ == '__main__':
 
     m_s.save_station(ret, file_name, m_c.station_id)
     print("--- generator ", file_name, " done!!!!!!!!! ---")
-    # m_s.save_station_cp(ret, file_name_n, m_c.station_id, m_c.init_yaw, m_c.init_p)    
-    # print("--- generator ", file_name_n, " done!!!!!!!!! ---")

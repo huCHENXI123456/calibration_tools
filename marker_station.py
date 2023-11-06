@@ -12,28 +12,27 @@ def save_station(ret, file_name, station_id):
         f.write("id: " + str(station_id) + "\n")
         f.write("frame_id: " + "\"world\"" + "\n")
         f.write("rear_load: true" + "\n")
-
+        R = []
+        t = []
         for i in range(len(ret)):
             print("="*30, "ret[", i, "]", "="*30)
             B_s = np.array(ret[i])
-            T, R, t = m_p.computer_translate(m_c.M_I, B_s)
+            if i < 15:
+                T, R, t = m_p.computer_translate(m_c.M_I, B_s)
+
+            if i >= 15:
+                T, R, t0 = m_p.computer_translate(m_c.M_L, B_s)
+                t = np.dot(R, m_c.M_OFFSET) + t0
+                print("####### lidar",i," ##############")
+                print(t0)
+                print(t)
+                print("####### #### ##############")
             # Raw Pose
             y1, p1, r1 = m_p.convert_eular(R)
-            euler_out = m_p.rot_to_eular(R)
-
-            # eular
-            if False:
-                print("yaw: ", y1, "pitch: ", p1, "roll: ", r1)
-                print("euler(p[0]->p[1]->z): ", euler_out)
-                print("x: ", t[0], "y: ", t[1], "z: ", t[2])
-
-            # verify
-            if False:
-                R1 = m_p.convert_rotation(y1, p1, r1)
-                print("[main] verify R convert: ", R1)
 
             f.write("markers { \n")
             f.write("\tid: " + str(i+1) + "\n")
+            # write camera
             if i == 0:
                 f.write("\tname: " + "\"" + "P1" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "P1" + "\"" + "\n")
@@ -64,6 +63,7 @@ def save_station(ret, file_name, station_id):
             if i == 9:
                 f.write("\tname: " + "\"" + "P10" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "P10" + "\"" + "\n")
+            # write fisheye
             if i == 10:
                 f.write("\tname: " + "\"" + "F1" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "F1" + "\"" + "\n")                
@@ -79,12 +79,26 @@ def save_station(ret, file_name, station_id):
             if i == 14:
                 f.write("\tname: " + "\"" + "F5" + "\"" + "\n")
                 f.write("\tframe_id: " + "\"" + "F5" + "\"" + "\n")  
+            # write lidar
             if i == 15:
-                f.write("\tname: " + "\"" + "LL" + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + "LL" + "\"" + "\n") 
+                f.write("\tname: " + "\"" + "L0" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L0" + "\"" + "\n") 
             if i == 16:
-                f.write("\tname: " + "\"" + "LR" + "\"" + "\n")
-                f.write("\tframe_id: " + "\"" + "LR" + "\"" + "\n")                                                                                 
+                f.write("\tname: " + "\"" + "L1" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L1" + "\"" + "\n")
+            if i == 17:
+                f.write("\tname: " + "\"" + "L2" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L2" + "\"" + "\n") 
+            if i == 18:
+                f.write("\tname: " + "\"" + "L3" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L3" + "\"" + "\n")
+            if i == 19:
+                f.write("\tname: " + "\"" + "L4" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L4" + "\"" + "\n") 
+            if i == 20:
+                f.write("\tname: " + "\"" + "L5" + "\"" + "\n")
+                f.write("\tframe_id: " + "\"" + "L5" + "\"" + "\n")
+
             f.writelines("\ttype: CHESS_BOARD" + "\n")
             f.writelines("\tpose {" + "\n")
             f.writelines("\t\tframe_id: "+"\"world\"" + "\n")
@@ -119,12 +133,8 @@ def save_station(ret, file_name, station_id):
             if i == 7:      # The rightRear marker
                 f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
 
-            # if i == 8:      # The leftMiddle marker
-            #     f.writelines("\tobservers: LEFT_FRONT_CAMERA " + "\n")
-            #     f.writelines("\tobservers: LEFT_REAR_CAMERA " + "\n")
-            # if i == 9:      # The rightMiddle marker
-            #     f.writelines("\tobservers: RIGHT_FRONT_CAMERA " + "\n")
-            #     f.writelines("\tobservers: RIGHT_REAR_CAMERA " + "\n")
+            if i == 8 or i == 9:      # The leftMiddle marker
+                continue
 
             if i == 10:      # The  marker
                 f.writelines("\tobservers: FRONT_FISHEYE_CAMERA " + "\n")
@@ -140,7 +150,11 @@ def save_station(ret, file_name, station_id):
                 f.writelines("\tobservers: RIGHT_FISHEYE_CAMERA " + "\n")
             if i == 15 or i == 16:      # The  marker
                 f.writelines("\tobservers: FRONT_LIDAR " + "\n")
-                                                                                                            
+            if i == 17 or i == 18:      # The  marker
+                f.writelines("\t#observers: LEFT_LIDAR " + "\n")
+            if i == 19 or i == 20:      # The  marker
+                f.writelines("\t#observers: RIGHT_LIDAR " + "\n")
+                                                                                                                                            
             f.writelines("\tused: true"+"\n")
             if i < 15:
                 f.writelines("\tdata:" + "\"rows: 5\\ncols: 9\\nsquare_size: 0.10\\ninner_only: true\\n\"" + "\n")

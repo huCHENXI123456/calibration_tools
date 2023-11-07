@@ -122,13 +122,13 @@ if __name__ == '__main__':
         plota(ret[12], m12.name)
         plota(ret[13], m13.name)
         plota(ret[14], m14.name)                      
-    if False:
+    if True:
         plota(ret[15], m15.name)
         plota(ret[16], m16.name)
-        plota(ret[17], m16.name)
-        plota(ret[18], m16.name)
-        plota(ret[19], m16.name)
-        plota(ret[20], m16.name)   
+        # plota(ret[17], m17.name)
+        # plota(ret[18], m18.name)
+        # plota(ret[19], m19.name)
+        # plota(ret[20], m20.name)   
 
     print("#"*60)
     if False:

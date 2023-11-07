@@ -10,15 +10,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 10.037819549272323
-			y: 2.9769983427878737
-			z: 2.781967648934751
+			x: 10.023392871206829
+			y: 3.0837022749567606
+			z: 2.500969413526298
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 2.8074902308717573
-			pitch: 1.568886313334435
-			roll: -1.0906752591422637
+			yaw: 0.5138558306270669
+			pitch: 1.5213027728637478
+			roll: 3.094108963510305
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -41,15 +41,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 11.663375758521138
-			y: 0.9808740878186359
-			z: 2.994522137622049
+			x: 11.692420508096768
+			y: 1.002959131206309
+			z: 2.4958140014344403
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.6066418069030779
-			pitch: 1.5056826840190247
-			roll: -2.9352901809560468
+			yaw: 0.5438364163816592
+			pitch: 1.509208863353262
+			roll: -2.9121981672769084
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -74,15 +74,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 12.291767052698727
-			y: -0.46010836108586195
-			z: 3.027541538756777
+			x: 12.296017012107539
+			y: -0.45846736173238134
+			z: 2.3781561702515477
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -0.1284800795113197
-			pitch: 1.5273289774226044
-			roll: -2.9408074039970336
+			yaw: -0.10144595012022461
+			pitch: 1.5289141932359245
+			roll: -2.932789645669844
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -107,15 +107,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 11.861679007591926
-			y: -2.1768990782575846
-			z: 2.7074062962201966
+			x: 11.894261115047184
+			y: -2.2734362896457103
+			z: 2.4853995034845977
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 0.7873364800204444
-			pitch: 1.5573425095634137
-			roll: -1.8353531044475515
+			yaw: -0.08420427181300588
+			pitch: 1.5202451567608881
+			roll: -2.483529615286018
 		} 
 	} 
 	observers: FRONT_WIDE_CAMERA 
@@ -139,15 +139,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 5.023935467380875
-			y: 3.563024052803704
-			z: 2.3887614523071017
+			x: 5.019496627783213
+			y: 3.5505536063748946
+			z: 2.3838300047564984
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.3359456724576895
-			pitch: 1.548383422687917
-			roll: 3.1191689175023787
+			yaw: 1.337951529767855
+			pitch: 1.5440136115861796
+			roll: 3.118523942659106
 		} 
 	} 
 	observers: LEFT_FRONT_CAMERA 
@@ -170,15 +170,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 1.700190571704943
-			y: 2.8924454051830266
-			z: 2.3722613143323246
+			x: 1.6983845599610299
+			y: 2.8757335629852765
+			z: 2.3676661018070972
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.4380082875383515
-			pitch: 1.5482523981627465
-			roll: 2.1898559948638505
+			yaw: 1.4338635693352746
+			pitch: 1.5485482763476843
+			roll: 2.1830674338010554
 		} 
 	} 
 	observers: LEFT_REAR_CAMERA 
@@ -201,15 +201,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 5.732617184875597
-			y: -3.327075423465497
-			z: 2.397558564403432
+			x: 5.74211751271037
+			y: -3.334267866056062
+			z: 2.392522832013268
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -1.7179433828164032
-			pitch: 1.5545119199996742
-			roll: 2.6881695566277615
+			yaw: -1.6698993768603376
+			pitch: 1.552717893148946
+			roll: 2.7349313408131346
 		} 
 	} 
 	observers: RIGHT_FRONT_CAMERA 
@@ -232,15 +232,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 2.1280422468464497
-			y: -3.460553289253461
-			z: 2.320367085483304
+			x: 2.13884206186998
+			y: -3.4751378494474343
+			z: 2.3156932564279367
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.6145240957633684
-			pitch: 1.5437326943058995
-			roll: 0.8888682884663289
+			yaw: 1.6506937389126064
+			pitch: 1.5442644404273609
+			roll: 0.9229806810797532
 		} 
 	} 
 	observers: RIGHT_REAR_CAMERA 
@@ -264,27 +264,16 @@ markers {
 		frame_id: "world"
 		position {
 			x: 7.174080145050443
-			y: 1.8274570920919673
-			z: 0.027330885264055565
+			y: 1.827457092091967
+			z: 0.027330885264055537
 		} 
 		euler_angles { 
 			euler_order: XYZ
 			yaw: 3.1363675001866134
-			pitch: 0.0021627926230682643
-			roll: 0.00498155618741066
+			pitch: 0.002162792623068235
+			roll: 0.004981556187410718
 		} 
 	} 
-	used: true
-	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
-	roi { 
-		auto_roi: true 
-		scale: 2.0
-	} 
-	refinement: true
-	solve_pose: true
-	scale: 1.0
-	use_opencv: true
-} 
 markers { 
 	id: 10
 	name: "P10"
@@ -301,20 +290,9 @@ markers {
 			euler_order: XYZ
 			yaw: -2.132887480335944
 			pitch: 1.5489472350479185
-			roll: 2.794569223833137
+			roll: 2.7945692238331366
 		} 
 	} 
-	used: true
-	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
-	roi { 
-		auto_roi: true 
-		scale: 2.0
-	} 
-	refinement: true
-	solve_pose: true
-	scale: 1.0
-	use_opencv: true
-} 
 markers { 
 	id: 11
 	name: "F1"
@@ -323,15 +301,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 7.412013115587031
-			y: 0.29131412311695304
-			z: 0.023443182114865818
+			x: 7.411571353536359
+			y: 0.293481088000212
+			z: 0.02421725464140566
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -3.1400712938249344
-			pitch: 0.0013327943047481573
-			roll: -0.008838017272864604
+			yaw: -3.1394540957856463
+			pitch: 0.001498031853254622
+			roll: -0.008907413346816488
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -354,15 +332,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 6.673776413174561
-			y: 1.6555086051289643
-			z: 0.029808759770569813
+			x: 6.673770772739348
+			y: 1.6569813534949187
+			z: 0.030500213589631685
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -1.5574283422215462
-			pitch: 0.0033819988552678685
-			roll: 0.0012815479388918478
+			yaw: -1.5635384648129174
+			pitch: 0.002664678364147388
+			roll: 0.0011413977057295618
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -386,15 +364,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 4.914700984616385
-			y: 2.0610356147784294
-			z: 0.020610113010765433
+			x: 4.9134611617615995
+			y: 2.062880790094867
+			z: 0.021734343667951947
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: -1.5702508188999647
-			pitch: 0.0003247066013901403
-			roll: 0.013682121825044266
+			yaw: -1.5706499823915712
+			pitch: 0.0014901674133956358
+			roll: 0.0137552529223627
 		} 
 	} 
 	observers: LEFT_FISHEYE_CAMERA 
@@ -417,15 +395,15 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 7.353011983135103
-			y: -1.70282794252253
-			z: 0.016955948518110362
+			x: 7.354047207666632
+			y: -1.6983935868576718
+			z: 0.017645042434939723
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.5765443133627652
-			pitch: 0.0077419992028428496
-			roll: -0.010485249891803612
+			yaw: 1.580360568276093
+			pitch: 0.006323427319511066
+			roll: -0.010990540010753055
 		} 
 	} 
 	observers: FRONT_FISHEYE_CAMERA 
@@ -449,20 +427,206 @@ markers {
 	pose {
 		frame_id: "world"
 		position {
-			x: 5.616033292456707
-			y: -2.058074041295663
-			z: 0.008488422821369837
+			x: 5.617219271841977
+			y: -2.0570400654813703
+			z: 0.0092631018201958
 		} 
 		euler_angles { 
 			euler_order: XYZ
-			yaw: 1.5645483274109364
-			pitch: 0.002323275795332375
-			roll: -0.011400082738189501
+			yaw: 1.564794351452651
+			pitch: 0.0018269494376416519
+			roll: -0.01175474619213826
 		} 
 	} 
 	observers: RIGHT_FISHEYE_CAMERA 
 	used: true
 	data:"rows: 5\ncols: 9\nsquare_size: 0.10\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 16
+	name: "L0"
+	frame_id: "L0"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 8.982138765286791
+			y: 1.6095837364945222
+			z: 1.8248854992073877
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.7615669687167489
+			pitch: 1.537181391107198
+			roll: -2.7652722062707427
+		} 
+	} 
+	observers: FRONT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 17
+	name: "L1"
+	frame_id: "L1"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 9.188163777899877
+			y: -1.3089124931149498
+			z: 2.3013670855158144
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -1.34743102725257
+			pitch: 1.564143913368631
+			roll: 2.1274687342709684
+		} 
+	} 
+	observers: FRONT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 18
+	name: "L2"
+	frame_id: "L2"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 8.982138765286791
+			y: 1.6095837364945222
+			z: 1.8248854992073877
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.7615669687167489
+			pitch: 1.537181391107198
+			roll: -2.7652722062707427
+		} 
+	} 
+	#observers: LEFT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 19
+	name: "L3"
+	frame_id: "L3"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 9.198154601766076
+			y: -1.2779946976809928
+			z: 1.9922561135559558
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -1.8832904199992966
+			pitch: 1.294478582542137
+			roll: 1.5890801185646861
+		} 
+	} 
+	#observers: LEFT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 20
+	name: "L4"
+	frame_id: "L4"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 8.982138765286791
+			y: 1.6095837364945222
+			z: 1.8248854992073877
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: 0.7615669687167489
+			pitch: 1.537181391107198
+			roll: -2.7652722062707427
+		} 
+	} 
+	#observers: RIGHT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
+	roi { 
+		auto_roi: true 
+		scale: 2.0
+	} 
+	refinement: true
+	solve_pose: true
+	scale: 1.0
+	use_opencv: true
+} 
+markers { 
+	id: 21
+	name: "L5"
+	frame_id: "L5"
+	type: CHESS_BOARD
+	pose {
+		frame_id: "world"
+		position {
+			x: 9.198154601766076
+			y: -1.2779946976809928
+			z: 1.9922561135559558
+		} 
+		euler_angles { 
+			euler_order: XYZ
+			yaw: -1.8832904199992966
+			pitch: 1.294478582542137
+			roll: 1.5890801185646861
+		} 
+	} 
+	#observers: RIGHT_LIDAR 
+	used: true
+	data:"rows: 2\ncols: 2\nsquare_size: 0.20\ninner_only: true\n"
 	roi { 
 		auto_roi: true 
 		scale: 2.0

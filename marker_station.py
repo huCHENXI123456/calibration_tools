@@ -23,10 +23,6 @@ def save_station(ret, file_name, station_id):
             if i >= 15:
                 T, R, t0 = m_p.computer_translate(m_c.M_L, B_s)
                 t = np.dot(R, m_c.M_OFFSET) + t0
-                print("####### lidar",i," ##############")
-                print(t0)
-                print(t)
-                print("####### #### ##############")
             # Raw Pose
             y1, p1, r1 = m_p.convert_eular(R)
 
